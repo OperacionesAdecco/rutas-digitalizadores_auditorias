@@ -1,0 +1,3159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 16 - ADRIANA STEFANY GARCIA FALCON</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 16</h2>
+        <h3>2026-04-13 a 2026-04-19<br>👤 Digitalizador: ADRIANA STEFANY GARCIA FALCON<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 14-04-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_ADRIANA_STEFANY_martes.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ALVA AGUILAR ELIZABET JULLISSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004200124</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ALVA AGUILAR ELIZABET JULLISSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr.Garcia Robledo n°293 Breña </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-24</td>
+                    <td>S14312815</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-24</td>
+                    <td>S14313243</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-24</td>
+                    <td>S13620629</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ALVAREZ GERONIMO CARLOS ADRIAN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004216834</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ALVAREZ GERONIMO CARLOS ADRIAN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr. Loreto 322 </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14512757</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14361360</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-05</td>
+                    <td>S13834989</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 AQUINO PACHERRES MARY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004165617</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> AQUINO PACHERRES MARY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR Loreto 292</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14675433</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14447266</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14196701</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BARDALES SALAZAR HILDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000405319</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BARDALES SALAZAR HILDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. JIR MANTARO N585 NRO. 585 MZA. MAZAA460 URB. BRE A Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14673480</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14359966</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14199583</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-26</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Orientación del vendedor<br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> S14673480
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-24</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Prefiere pedir con su vendedor<br>
+            <b>Fecha Pedido:</b> 2025-11-24 11:23:00<br>
+            <b>Código Pedido:</b> S11457384
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BARRETO GONZALES PRIMITIVA DOMITILA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001286977</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BARRETO GONZALES PRIMITIVA DOMITILA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. PROVEEDORES UNIDOS NRO. 55 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14704604</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14614833</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-27</td>
+                    <td>S14389644</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CALIZAYA PAREDES BEATRIZ DENISE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001760655</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CALIZAYA PAREDES BEATRIZ DENISE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CARHUAZ NRO. 300 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14669570</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14189344</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-06</td>
+                    <td>S11006416</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-07</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> S14669570
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-01</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-20</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ESTEFANY LUCY RAMOS AYMITUMA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CALLE BARRIOS CAROLA DOLORES</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001740042</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CALLE BARRIOS CAROLA DOLORES</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. PARIACOTO NRO. 136 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14278685</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-16</td>
+                    <td>S14105059</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-05</td>
+                    <td>S13845695</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-20</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-02-09 00:00:00<br>
+            <b>Código Pedido:</b> S13264894
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-23</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-02 00:00:00<br>
+            <b>Código Pedido:</b> S13096205
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-06</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Prefiere pedir con su vendedor<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CARHUAVILCA CHUMPITAZ CESAR FERRER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000405334</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CARHUAVILCA CHUMPITAZ CESAR FERRER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MDO MANOA P-104A MZA. MAZAA170 URB. BREÑA Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14666043</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14575350</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14517344</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CORNITERO OLIVEROS LUISA GRACIELA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001659704</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CORNITERO OLIVEROS LUISA GRACIELA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CARAVELI NRO. 936 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-16</td>
+                    <td>S14112589</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-16</td>
+                    <td>S14112418</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>S14025564</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-03</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> No tiene equipo celular compatible<br>
+            <b>Fecha Pedido:</b> 2026-02-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-27</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> No tiene equipo celular compatible<br>
+            <b>Fecha Pedido:</b> 2025-12-01 00:00:00<br>
+            <b>Código Pedido:</b> S11658730
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CUBA NUNEZ JONY EDWIN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001760188</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CUBA NUNEZ JONY EDWIN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AVENIDA ARICA NRO 515 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14594028</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14194034</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-05</td>
+                    <td>S13859641</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DE PAZ VELASQUEZ JOSE EDUARDO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001685702</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DE PAZ VELASQUEZ JOSE EDUARDO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. YANGAS NRO. 199 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14513171</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14186764</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-05</td>
+                    <td>S13838045</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DE POMAR CEPEDA SERGIO GIOVANNI</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004203285</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DE POMAR CEPEDA SERGIO GIOVANNI</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado Chacra Colorada PT 33 JR.   Loreto # 364</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-12-22</td>
+                    <td>S12199117</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-10</td>
+                    <td>S11116533</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-05</td>
+                    <td>S11001108</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DIAZ HUATAY ALEXANDER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004202972</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DIAZ HUATAY ALEXANDER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> -jr.Pastaza n°1351 Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-17</td>
+                    <td>S14128357</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-17</td>
+                    <td>S14139481</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-17</td>
+                    <td>S13457482</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DIAZ PONCE ANA PATRICIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001735526</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DIAZ PONCE ANA PATRICIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MDO SAN JOSE PTO 22 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14677494</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14589380</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14525917</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DOMINGUEZ CHAVEZ ANTONIO RUBEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001626000</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DOMINGUEZ CHAVEZ ANTONIO RUBEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. JUAN PABLO FERNANDINI NRO. 656 INT. 343 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14675193</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14674771</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14530974</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 EUCEBIO CHACON HIAHAYRA FIORELA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001757004</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> EUCEBIO CHACON HIAHAYRA FIORELA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR CARHUAZ 1101 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14659892</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14660194</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14530994</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GRANADOS HUAYRE YUDI RITA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000404873</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GRANADOS HUAYRE YUDI RITA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MER NUEVO MILENIO P183 MZA. MAZAA190 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14620333</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-31</td>
+                    <td>S14478277</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-31</td>
+                    <td>S14476709</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-27 00:00:00<br>
+            <b>Código Pedido:</b> S14394644
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-02</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GUERRERO HUAMAN ANAMELVA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001740018</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GUERRERO HUAMAN ANAMELVA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. HUANTAR NRO. 65 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14672193</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14581467</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14534255</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUAMAN HUAMANI SONIA ELVIRA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001665409</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUAMAN HUAMANI SONIA ELVIRA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CARHUAZ NRO. 640 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14681292</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593593</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593632</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUAMANI QUISPE MAURICIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001761405</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUAMANI QUISPE MAURICIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MDO CHACRA COLOLARA PTO70 URB. JR LORETO 358 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14681184</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14585379</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14454605</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LOPEZ FUSTER YANINA MONICA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001481599</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LOPEZ FUSTER YANINA MONICA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CALLE A NRO. 285 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14695115</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-27</td>
+                    <td>S14397740</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-24</td>
+                    <td>S14295007</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LOPEZ TAFUR SONIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001707032</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LOPEZ TAFUR SONIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> PJE. LAS MALVAS NRO. 135 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14343922</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14174241</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-05</td>
+                    <td>S13848306</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-03</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-19</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MANTARI GONZALES DE VIZURRAGA AURORA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000533050</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MANTARI GONZALES DE VIZURRAGA AURORA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. PASTAZA NRO. 1351 MZA. MAZAA130 URB. BREÑA Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-12-19</td>
+                    <td>S12138297</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-21</td>
+                    <td>S11415961</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-21</td>
+                    <td>S11418203</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-02</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-02 00:00:00<br>
+            <b>Código Pedido:</b> 983c21a6-c1a0-4227-bdd0-7b7d14d407e6
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ONSIHUAY PASCUAL DOMINGA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000405416</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ONSIHUAY PASCUAL DOMINGA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER CC EL PARQUE N-278 NRO. 278 MZA. MAZAA230 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14585971</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14527435</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14361555</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PEDREROS GAMARRA MILUSKA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004185877</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PEDREROS GAMARRA MILUSKA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jiron jorge chavez 654</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14454811</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-26</td>
+                    <td>S13690431</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-19</td>
+                    <td>S13509800</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 POMALEQUE SUBIA EMILIANO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000396935</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> POMALEQUE SUBIA EMILIANO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. GRAL ORBEGOSO NRO. 579 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-17</td>
+                    <td>S14131293</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-24</td>
+                    <td>S13615628</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-01-20</td>
+                    <td>S12793168</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 QQUECCANO SANTANDER CELIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000405370</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> QQUECCANO SANTANDER CELIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. JIR CARHUAS N901 NRO. 901 MZA. MAZAA390 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14678289</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14678277</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14529430</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-03</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Persona no tecnológica / tercera edad<br>
+            <b>Fecha Pedido:</b> 2025-11-10 16:21:00<br>
+            <b>Código Pedido:</b> S11112387
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SUCESION INDIVISA ABRANSON MALDONADO DE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001216098</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SUCESION INDIVISA ABRANSON MALDONADO DE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. RESTAURACION NRO. 1218 Lima-Lima-Breña</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Sin pedidos registrados</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-30 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SULCA ORE RUTH BERTHA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001470032</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SULCA ORE RUTH BERTHA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ZORRITOS C/7 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14656158</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14181931</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-19</td>
+                    <td>S13505981</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-28</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Usa el app correctamente<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 URIARTE BECERRA FLOR MAGALI</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004193609</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> URIARTE BECERRA FLOR MAGALI</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado Manoa Pto 131 JR.Aija 276</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Breña (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>S14019472</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-09</td>
+                    <td>S13947068</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-26</td>
+                    <td>S13668947</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+</details>
+            <details class="day-card">
+                <summary class="day-summary">📅 15-04-2026 (20 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_ADRIANA_STEFANY_miercoles.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ALANYA CUBAS BRYAN YAMNICOL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004192891</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ALANYA CUBAS BRYAN YAMNICOL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> av san luis 909</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-11-29</td>
+                    <td>S11632202</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-05</td>
+                    <td>S10990708</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2025-10-25</td>
+                    <td>S10750372</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BALCAZAR YAYA DE AYALA ALICIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001656317</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BALCAZAR YAYA DE AYALA ALICIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. PUERTO ILAVE NRO. 162 Lima-Lima-San Luis</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14554149</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14556130</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13909125</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BARRANTES HIDALGO MARTHA CECILIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001705915</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BARRANTES HIDALGO MARTHA CECILIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. JOSE GALVEZ NRO. 245 INT. A Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593947</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14280108</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-09</td>
+                    <td>S13936004</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BARRANTES SANCHEZ CARLOS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000402529</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BARRANTES SANCHEZ CARLOS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AVE GALVEZ JOSE N245 NRO. 245 MZA. MAZAA250 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14671310</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14580382</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14439930</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14283516
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> Persona no tecnológica / tercera edad<br>
+            <b>Fecha Pedido:</b> 2025-12-22 00:00:00<br>
+            <b>Código Pedido:</b> S12183712
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-23</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> OSMAR WANDERLEY DUEÑAS DUEÑAS<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2025-10-06 13:30:00<br>
+            <b>Código Pedido:</b> S10242691
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BERROCAL HUAMAN DE FERNANDEZ MARIA ELENA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000402135</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BERROCAL HUAMAN DE FERNANDEZ MARIA ELENA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. 28 DE JULIO NRO. 1813 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14661369</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593620</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593718</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> OSMAR WANDERLEY DUEÑAS DUEÑAS<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-22 00:00:00<br>
+            <b>Código Pedido:</b> S9888364
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CALVO ARAUJO ANGEL ARTURO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004177036</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CALVO ARAUJO ANGEL ARTURO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av Manco Capac 1334</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14682100</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14587393</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14587547</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CERVANTES ASCA YOVANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004197351</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CERVANTES ASCA YOVANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Calle Tinta 661</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14509720</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-11</td>
+                    <td>S14007774</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-18</td>
+                    <td>S13483436</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DAVILA BERNABLE LUIS ALBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004159137</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DAVILA BERNABLE LUIS ALBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr Raul Villaran Pasquel 131</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14735691</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14735492</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14650106</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ESCUDERO MEZA NELLY VICTORIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004169175</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ESCUDERO MEZA NELLY VICTORIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av Jose Galvez 170</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14583919</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14454569</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-26</td>
+                    <td>S13691085</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 INVERSIONES COMERCIALES LOPEZ S.A.C.</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001270270</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> INVERSIONES COMERCIALES LOPEZ S.A.C.</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. HUANCABAMBA NRO. 399 INT. 1 URB. SAN LUIS Lima-Lima-San Luis</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14727523</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14647962</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14561194</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-22</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LOPEZ PAREJA ROSAMARY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001708840</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LOPEZ PAREJA ROSAMARY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. RIO AMAZONAS NRO. 279 Lima-Lima-San Luis</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14735624</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14423246</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14369408</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-01</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Prefiere pedir con su vendedor<br>
+            <b>Fecha Pedido:</b> 2026-04-11 00:00:00<br>
+            <b>Código Pedido:</b> S14735624
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-22</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> Prefiere pedir con su vendedor<br>
+            <b>Fecha Pedido:</b> 2025-11-22 16:46:00<br>
+            <b>Código Pedido:</b> S11444318
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MELLADO PRADO DE VELASCO ANA ANDREA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001562766</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MELLADO PRADO DE VELASCO ANA ANDREA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. HUAMANGA NRO. 239 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14589968</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14362051</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14283675</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NAVARRO PAREDES LELYS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004201274</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NAVARRO PAREDES LELYS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr. Tinta 630</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14421250</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14420895</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-14</td>
+                    <td>S14084305</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PALACIOS PASCUAL EUFRACIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004215745</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PALACIOS PASCUAL EUFRACIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av Río Piura 477</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14735998</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14647204</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14562728</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 R &amp; M MARKET S.A.C.</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004099092</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> R &amp; M MARKET S.A.C.</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CAL. RIO HUALLAGA NRO. 237 - LIMA LIMA SAN LUIS</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Sin pedidos registrados</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-21</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ADRIANA STEFANY GARCIA FALCON<br>
+            <b>Motivo no capacitado:</b> No tiene equipo celular compatible<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-16</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> ESTEFANY LUCY RAMOS AYMITUMA<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAMOS MESAJIL DE CORREA CLOTILDE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001751692</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAMOS MESAJIL DE CORREA CLOTILDE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. SANGARARA NRO. 366 Lima-Lima-San Luis</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Luis (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14728120</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14555819</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13910218</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="empty-box">Sin histórico de capacitación</div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROBLADILLO CALDERON ZULEMA SOFIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004035897</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROBLADILLO CALDERON ZULEMA SOFIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av. 28 de Julio 1231</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14273692</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-16</td>
+                    <td>S14107837</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-04</td>
+                    <td>S13814077</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-17</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-01-19 00:00:00<br>
+            <b>Código Pedido:</b> S12772315
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> OSMAR WANDERLEY DUEÑAS DUEÑAS<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-15 00:00:00<br>
+            <b>Código Pedido:</b> S9708721
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROMAN ROJAS ROCIO NANCY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001696356</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROMAN ROJAS ROCIO NANCY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PROLG ANDAHUAYLAS NRO. 703 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-10-13</td>
+                    <td>S10422540</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2025-10-06</td>
+                    <td>S10247281</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-31</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> OSMAR WANDERLEY DUEÑAS DUEÑAS<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SALAZAR GIRALDO LUZ FERNANDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001543871</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SALAZAR GIRALDO LUZ FERNANDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. JOSE GALVEZ NRO. 449 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14343707</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14282694</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-23</td>
+                    <td>S13579104</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-24 17:33:00<br>
+            <b>Código Pedido:</b> S11476788
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VARGAS CONDORI DALMIRO AMBROCIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000402405</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VARGAS CONDORI DALMIRO AMBROCIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PAR PORVENIR NS/N MZA. MAZAA140 URB. LA VICTORIA Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14728308</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14416859</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-25</td>
+                    <td>S14320811</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-22 08:52:00<br>
+            <b>Código Pedido:</b> S11422405
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

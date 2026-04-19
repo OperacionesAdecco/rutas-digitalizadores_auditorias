@@ -1,0 +1,2615 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 17 - DANIEL ARTURO ALVAREZ CUZCANO</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 17</h2>
+        <h3>2026-04-20 a 2026-04-26<br>👤 Digitalizador: DANIEL ARTURO ALVAREZ CUZCANO<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 20-04-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_DANIEL_ARTURO_lunes.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ARANGUREN LEON EDGAR VICTOR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001534559</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ARANGUREN LEON EDGAR VICTOR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON URB. TREBOL AZUL PSTO. 15 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14834384</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14509533</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14416232</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-01</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2026-04-04 00:00:00<br>
+            <b>Código Pedido:</b> 3f8f8fa2-e26c-4b47-abaf-100c9526134a
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-22</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BERROCAL GANTO MARISOL JAZMIN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001668656</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BERROCAL GANTO MARISOL JAZMIN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON URB. AH TREBOL AZUL PSTO. 24 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-10-18</td>
+                    <td>S10551465</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CABANILLAS SALAZAR MARIA DEL PILAR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001015424</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CABANILLAS SALAZAR MARIA DEL PILAR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. 13 DE OCTUBRE URB. SAN JUAN PSTO. 17 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14805089</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14717368</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14639850</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-01</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-15 00:00:00<br>
+            <b>Código Pedido:</b> S14805089
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 4e67df78-fb8a-467c-8c66-2b855b7fd739
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-24 00:00:00<br>
+            <b>Código Pedido:</b> S12234045
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-22 11:38:00<br>
+            <b>Código Pedido:</b> S11430886
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CAMPOS ROJAS CARMEN ROSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001672831</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CAMPOS ROJAS CARMEN ROSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. 13 DE OCTUBRE URB. SAN JUAN PSTO. 20 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14805674</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14719212</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14639408</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> b43c0197-d2ed-480b-bb2d-d3ea89b0e7a5
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> S12151093
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CARDENAS CACERES AMELIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001522477</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CARDENAS CACERES AMELIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. CANEVARO MZA. L LOTE. 4 URB. ASOCTREBOL AZUL Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14561094</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14424367</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14255089</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-01</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2026-04-04 00:00:00<br>
+            <b>Código Pedido:</b> S14561094
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> S14255089
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CASIMIRO ESPIRITU EULOGIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000416331</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CASIMIRO ESPIRITU EULOGIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDOSAGRADO CORAZON PTO23 URB. AHEL TREBOL Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14800092</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14509806</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14509570</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-02-21 00:00:00<br>
+            <b>Código Pedido:</b> S13558287
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CCARI LAURA CARMEN ELIZABETH</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001722168</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CCARI LAURA CARMEN ELIZABETH</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. LOS CIPRESES NRO. 426 URB. VALLE SHARON PSTO. 1 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-14</td>
+                    <td>S14792206</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14709015</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14618670</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14142808
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-23 00:00:00<br>
+            <b>Código Pedido:</b> S12223561
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-04 14:26:00<br>
+            <b>Código Pedido:</b> S10962710
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DE LA TORRE JIMENEZ IRIS MARITZA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001651287</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DE LA TORRE JIMENEZ IRIS MARITZA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON DE JESUS URB. AH TREBOL AZUL PSTO. 25 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14734269</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14733586</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14551177</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-01-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 FLORES FERNANDEZ ELENA AURORA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001686266</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> FLORES FERNANDEZ ELENA AURORA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MIGUEL IGLESIAS INT. 3 PSTO. 3 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14702624</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14619313</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14612794</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14132803
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-02-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GARCIA GAMARRA DE TEJEDA MERCEDES</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001440865</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GARCIA GAMARRA DE TEJEDA MERCEDES</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON MZA. 37 URB. SAN JUAN DE MIRAFLORES Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14806340</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14726502</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14638143</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-01</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-08 00:00:00<br>
+            <b>Código Pedido:</b> S14638143
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> S13986391
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-02-25 00:00:00<br>
+            <b>Código Pedido:</b> S13639957
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GASPAR VARGAS FRANZ ALBERT</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001403232</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GASPAR VARGAS FRANZ ALBERT</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SUPER MERCADO VALLE SHARON URB. SAN JUAN DE MIRAFLORES PSTO. 12 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14701484</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14701362</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14622613</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14142846
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-02-17 00:00:00<br>
+            <b>Código Pedido:</b> S13459926
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GUTIERREZ FLORES JULIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001002608</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GUTIERREZ FLORES JULIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AHREPUBLICA FEDERAL ALEMANA MZA. I LOTE. 12 URB. SAN JUAN DE MIRAFLORES Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14650805</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14500285</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-25</td>
+                    <td>S14339868</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> S14162432
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-02</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-08 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HIDALGO ORIHUELA MARIZA BENITA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001619731</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HIDALGO ORIHUELA MARIZA BENITA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON URB. SAM JUAN DE MIRAFLORES PSTO. 16 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14817125</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14635711</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-11</td>
+                    <td>S13984463</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> S13984463
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> S12147234
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 12:54:00<br>
+            <b>Código Pedido:</b> S11075825
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-22</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 12:12:00<br>
+            <b>Código Pedido:</b> S10132479
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUAMAN BELTRAN MARILU BETTSI</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000511926</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUAMAN BELTRAN MARILU BETTSI</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. OTR AAHHTREBOL AZUL M-Q L-11 LOTE. 11 URB. SAN JUAN DE MIRAFLORES Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14723202</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14560901</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14502713</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14072255
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-27 00:00:00<br>
+            <b>Código Pedido:</b> S12279638
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUARACA VILLAFUERTE EXALTACION</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000416885</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUARACA VILLAFUERTE EXALTACION</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAGRADO CORAZON PSTO. 68 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14799735</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14736517</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14720424</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> S13983709
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-01 10:16:00<br>
+            <b>Código Pedido:</b> S10902869
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-22</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 10:19:00<br>
+            <b>Código Pedido:</b> S10206888
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MALPARTIDA HUAMANI CARMEN ROSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001544327</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MALPARTIDA HUAMANI CARMEN ROSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MERCADO SAGRADO DE CORAZON URB. A H TREBOL AZUL PSTO. 31 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14801255</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14551812</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14491603</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14073887
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> S12167382
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 10:23:00<br>
+            <b>Código Pedido:</b> S11067538
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NEYRA ATAHUI MARY LOURDES</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001757109</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NEYRA ATAHUI MARY LOURDES</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. REPÚBLICA FEDERAL ALEMANA MZ F Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14644557</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-14</td>
+                    <td>S14086023</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-28</td>
+                    <td>S13744413</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14086023
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-22 00:00:00<br>
+            <b>Código Pedido:</b> S12200709
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 OVIEDO PACASI NORBERTA GUILLERMINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000416020</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> OVIEDO PACASI NORBERTA GUILLERMINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MIGUEL IGLESIAS URB. SAN JUAN DE MIRAFLORES PSTO. 74 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-14</td>
+                    <td>S14791396</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-31</td>
+                    <td>S14479816</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-27</td>
+                    <td>S14397072</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14132209
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PELAEZ GONZALES FERNANDO HUGO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001392364</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PELAEZ GONZALES FERNANDO HUGO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. IGANCIO SEMINARIO NRO. 554 URB. ZONA B Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14819327</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-25</td>
+                    <td>S14340091</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14251802</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14079651
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-21</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-17</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 QUISPE CLAUDIO CYNTHIA VICTORIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001622318</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> QUISPE CLAUDIO CYNTHIA VICTORIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SUPER VALLE SHARON URB. SAN JUAN DE MIRAFLORES PSTO. 96 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-14</td>
+                    <td>S14789072</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-03</td>
+                    <td>S14538411</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-17</td>
+                    <td>S14138688</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14138688
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-25</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-04 11:26:00<br>
+            <b>Código Pedido:</b> S10952812
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 REVOLLEDO MEDINA BRANDO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001441456</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> REVOLLEDO MEDINA BRANDO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. LOS CIPRESES NRO. 512 URB. SAN JUAN DE MIRAFLORES Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14615855</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-31</td>
+                    <td>S14473082</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-27</td>
+                    <td>S14396937</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> S14116605
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROJAS FLORES ROSA ELENA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004192005</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROJAS FLORES ROSA ELENA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MDO, MIGUEL IGLESIAS PTO-74</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-14</td>
+                    <td>S14780934</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14701791</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14701734</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-20 00:00:00<br>
+            <b>Código Pedido:</b> S14220575
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-19 00:00:00<br>
+            <b>Código Pedido:</b> S12127144
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-25 12:54:00<br>
+            <b>Código Pedido:</b> S11493341
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SAAVEDRA ROJAS MARLY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001163765</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SAAVEDRA ROJAS MARLY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. 2 MZA. E LOTE. 52 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14731869</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14557432</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14560978</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14084430
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> S12161451
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-01 15:05:00<br>
+            <b>Código Pedido:</b> S10909222
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANCHEZ SOTO AYDEE GLORIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004184166</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANCHEZ SOTO AYDEE GLORIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. VALLE SHARON PTO-04</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14851136</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-14</td>
+                    <td>S14784672</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14697547</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-06 00:00:00<br>
+            <b>Código Pedido:</b> S13889265
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2025-12-19 00:00:00<br>
+            <b>Código Pedido:</b> S12115067
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-11 12:38:00<br>
+            <b>Código Pedido:</b> S11131893
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SEGOVIA CUTIPA CARLOS ENRIQUE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004042258</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SEGOVIA CUTIPA CARLOS ENRIQUE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZ.A LT.28-AA.HH.REPUBLICA FEDERAL ALEMANA, PAMPAS DE SAN JUAN</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14239655</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-14</td>
+                    <td>S14078924</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-25</td>
+                    <td>S13661139</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> S14078924
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> S11963317
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-15 09:11:00<br>
+            <b>Código Pedido:</b> S11237984
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SILVA VICENTE EVELLYNG ROSARIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001559222</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SILVA VICENTE EVELLYNG ROSARIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE FRANCISCO BOLOGNESI MZA. K LOTE. 9 URB. TREBOL AZUL Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14801677</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14550602</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-16</td>
+                    <td>S14098000</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-10</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> S14098000
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> Ha tenido una mala experiencia con Diadía<br>
+            <b>Fecha Pedido:</b> 2025-12-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-05 14:55:00<br>
+            <b>Código Pedido:</b> S10992967
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SULLCA HUAMAN GLADYS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001757313</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SULLCA HUAMAN GLADYS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PROLONGACION CESAR CANEVARO 32 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14422062</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-25</td>
+                    <td>S13659396</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-01-24</td>
+                    <td>S12919558</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-25</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-25 13:57:00<br>
+            <b>Código Pedido:</b> S10744588
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TORRES CASTILLA DE CAMPOS ELIZABETH ANGE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004097397</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TORRES CASTILLA DE CAMPOS ELIZABETH ANGE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AAHH. REPUBLICA DE ALEMANA MZ.A LTE.27</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14815505</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14557787</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14417613</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> S14003393
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-15 16:32:00<br>
+            <b>Código Pedido:</b> S11258956
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VALENZUELA ZAMALLOA SAYURI</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001760270</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VALENZUELA ZAMALLOA SAYURI</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MIGUEL IGLESIAS PSTO. 47 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14619135</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-31</td>
+                    <td>S14475369</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-24</td>
+                    <td>S14311139</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> S14137366
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> No tiene equipo celular compatible<br>
+            <b>Fecha Pedido:</b> 2025-12-16 00:00:00<br>
+            <b>Código Pedido:</b> S12032465
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-12</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-26 00:00:00<br>
+            <b>Código Pedido:</b> S10022131
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 YANAC MEGIA DE LIMA DOMINICA YOLANDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001305071</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> YANAC MEGIA DE LIMA DOMINICA YOLANDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE TREBOL AZUL MX L14 MZA. X LOTE. 14 Lima-Lima-San Juan de Miraflores</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Miraflores (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14801520</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14634227</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14634238</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-25 00:00:00<br>
+            <b>Código Pedido:</b> S14323064
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> DANIEL ARTURO ALVAREZ CUZCANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 16:17:00<br>
+            <b>Código Pedido:</b> S11083689
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-23</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BIANCA BELEN PADILLA MOSCOL<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 10:31:00<br>
+            <b>Código Pedido:</b> S10207577
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

@@ -1,0 +1,2207 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 17 - VALERIA ALEXANDRA MONTOYA MANRIQUE</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 17</h2>
+        <h3>2026-04-20 a 2026-04-26<br>👤 Digitalizador: VALERIA ALEXANDRA MONTOYA MANRIQUE<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 23-04-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_VALERIA_ALEXANDRA_jueves.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ACOSTA QUIJANO MARIBEL ENCARNACION</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001486198</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ACOSTA QUIJANO MARIBEL ENCARNACION</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. LA CHALACA URB. LA CHALACA PSTO. D-5 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14835291</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14573925</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14435806</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14835291
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14267871
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ALEGRE ALEGRE CARLOS ALBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759395</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ALEGRE ALEGRE CARLOS ALBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. SANTA MARINA NORTE BLOQUE/BL Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14848030</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14848327</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14764331</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14357088
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 AYASTA QUISPE MIGUEL ANGEL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004039658</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> AYASTA QUISPE MIGUEL ANGEL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> -Mcdo de Abasto psto 28-29</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14749133</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14758119</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14668826</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14184553
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CAMPOA DE LA CRUZ JENNY DELIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001522605</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CAMPOA DE LA CRUZ JENNY DELIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MP L13 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14842353</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14453906</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14285030</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14842353
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14285030
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CARRIZALES ARCE JUANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001264782</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CARRIZALES ARCE JUANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER UNION CHACHAPOYAS N285 P NRO. 285 MZA. MAZAA190 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14681161</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14368433</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14281783</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-09 00:00:00<br>
+            <b>Código Pedido:</b> S13946148
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CHAUPIS GARCIA CARLOS ANTONIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001632614</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CHAUPIS GARCIA CARLOS ANTONIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CIUDADELA CHALACA MZA. L LOTE. 7 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14831535</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14831674</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14743839</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14831674
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14353645
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CHUCHON VASQUEZ EDITH GIOVANNA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001703781</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CHUCHON VASQUEZ EDITH GIOVANNA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14750596</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14743774</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14570966</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14264533
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CUTIPA CARCASI ANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004037588</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CUTIPA CARCASI ANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Pasaje 4 Mz D Lt 4 </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14437528</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14262461</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-11</td>
+                    <td>S14000658</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-30 00:00:00<br>
+            <b>Código Pedido:</b> S14437528
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-21</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ESCATE HIDALGO GERARDO DAVID</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001562770</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ESCATE HIDALGO GERARDO DAVID</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. REPUBLICA DE PANAMA NRO. 842 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14821975</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14755948</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14654069</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> No capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> Otros Motivos<br>
+            <b>Fecha Pedido:</b> 2026-04-15 00:00:00<br>
+            <b>Código Pedido:</b> S14821975
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14368022
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 FLORES CANAZA PILAR SONIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001733265</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> FLORES CANAZA PILAR SONIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. CHACHAPOYAS PSTO. 91 - 9 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14285767</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14182753</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>S14023286</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14182753
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GODOY QUINONEZ JANET ROSARIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001566141</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GODOY QUINONEZ JANET ROSARIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. 3° NRO. 121 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14760273</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14591687</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14584550</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14278967
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HILARIO PAULINO MARIA MAGDALENA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001532433</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HILARIO PAULINO MARIA MAGDALENA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. COLON NRO. 990 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14830805</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14835572</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14757579</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-30</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-13 00:00:00<br>
+            <b>Código Pedido:</b> S14757558
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUAMAN ESCALANTE JESUS RAMIRO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001693055</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUAMAN ESCALANTE JESUS RAMIRO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. ABASTOS PSTO. 127 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14847799</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14752306</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14677863</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14847799
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-24 00:00:00<br>
+            <b>Código Pedido:</b> S14307964
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HUARAC DE CHAVEZ NECIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001264774</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HUARAC DE CHAVEZ NECIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER DE ABASTOS P35 MZA. MAZAA030 URB. URB STA MARINA Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14848427</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14739638</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14681122</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14848427
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14179756
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LAVERIANO ASENCIOS JESUS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001690468</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LAVERIANO ASENCIOS JESUS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. RIMAC MZA. E1 LOTE. 2 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14838071</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14763816</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14675763</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14285100
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LUQUE VDA DE HUANCA EUSEBIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004093495</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LUQUE VDA DE HUANCA EUSEBIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mcdo Chachapoyas psto 25</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14834156</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14665911</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14666073</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> S14097670
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MANTA ANCHIVILCA LUCIA ELISA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001264747</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MANTA ANCHIVILCA LUCIA ELISA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. MANUEL RAYGADA NRO. 1179 URB. CALLAO Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-23</td>
+                    <td>S14285656</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-23</td>
+                    <td>S13586687</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-23</td>
+                    <td>S13586687</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MEJIA CALCINA MARIA TERESA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001479499</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MEJIA CALCINA MARIA TERESA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. A MZA. L LOTE. 8 URB. RENOVACION PALOMINO Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14742598</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14659877</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14659679</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> S14659679
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-21</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> S13838367
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NAGASHIMA SALAZAR MERCEDES JENNIFER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001574019</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NAGASHIMA SALAZAR MERCEDES JENNIFER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZA. B LOTE. 4 URB. CIUDADELA CHALACA Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14677537</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14677507</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14366076</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14366076
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NUNEZ MENDOZA LUCY MARELENE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001333935</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NUNEZ MENDOZA LUCY MARELENE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. LA CHALACA URB. LA CHALACA PSTO. D4 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14833451</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14673071</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14360001</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14266319
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ORMENO SALAZAR PAOLA MARGARET</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001727349</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ORMENO SALAZAR PAOLA MARGARET</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. A MZA. Q LOTE. 8B Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14747238</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14570912</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14428491</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-06 00:00:00<br>
+            <b>Código Pedido:</b> S14570912
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-21</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> <br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PARIONA RAMOS GUADALUPE SEGUNDO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001693259</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PARIONA RAMOS GUADALUPE SEGUNDO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. COLON NRO. 998 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14835965</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14755822</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14755785</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-11</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> S14274035
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PINA BUSTAMANTE HAYDEE ROSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001573080</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PINA BUSTAMANTE HAYDEE ROSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZA. A LOTE. 19 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14843801</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14843828</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14742601</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14843828
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14367702
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROJAS PORTILLO MILAGROS KATHERINE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001717426</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROJAS PORTILLO MILAGROS KATHERINE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZA. C LOTE. 7 URB. CIUDADELA CHALACA Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14754388</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14593532</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14364519</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14364496
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROMERO GARCIA PEDRO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001369255</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROMERO GARCIA PEDRO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AAHH ALAMEDA VILLEGAS MZA. F LOTE. 9 URB. AAHH ALAMEDA VILLEGAS Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14742873</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14660207</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14570984</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> S14660207
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-21</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> S13837182
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROMERO GREGORIO BELINDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001566142</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROMERO GREGORIO BELINDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> BLQ. D INT. 3 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14842111</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14760203</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14675083</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> S14675083
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-21</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> S13859954
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TORRES IGNACIO YESMI MADECSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001684209</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TORRES IGNACIO YESMI MADECSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CHICLAYO 139 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14845011</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14759963</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14746758</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14183699
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TREVEJO DE VALDIVIA JESUS CONSTANTINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001267546</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TREVEJO DE VALDIVIA JESUS CONSTANTINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. REPUBLICA DE ARGENTINA MZA. A LOTE. 30 URB. CIUDADELA CHALACA Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14844243</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-02</td>
+                    <td>S14530557</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14195988</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14195988
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VALLEJOS VASQUEZ DANTE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001572472</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VALLEJOS VASQUEZ DANTE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. REPUBLICA DE PANAMA NRO. 303 Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14848518</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14841502</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14748013</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-04</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14841502
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-14</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> S14187892
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VIZARRAGA QUIQUIA CAROLINA SORAYA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001734140</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VIZARRAGA QUIQUIA CAROLINA SORAYA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZA. E LOTE. 4 URB. AAHH CIUDADELA CHALACA Callao-Callao-Callao</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Callao (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14828372</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14755267</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14661513</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-04-16 00:00:00<br>
+            <b>Código Pedido:</b> S14828372
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-13</b><br>
+            <b>Tipo:</b> Capacitado<br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> VALERIA ALEXANDRA MONTOYA MANRIQUE<br>
+            <b>Motivo no capacitado:</b> -<br>
+            <b>Fecha Pedido:</b> 2026-03-26 00:00:00<br>
+            <b>Código Pedido:</b> S14350868
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

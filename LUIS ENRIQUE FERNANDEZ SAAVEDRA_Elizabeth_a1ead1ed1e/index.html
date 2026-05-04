@@ -1,0 +1,2087 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 19 - LUIS ENRIQUE FERNANDEZ SAAVEDRA</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 19</h2>
+        <h3>2026-05-04 a 2026-05-10<br>👤 Digitalizador: LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 06-05-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_LUIS_ENRIQUE_miercoles.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ACOSTA TOVAR DIEGO ARMANDO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001617059</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ACOSTA TOVAR DIEGO ARMANDO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. INDEPENDENCIA NRO. 820 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14507616</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14439332</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-04</td>
+                    <td>S13826467</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 AQUISE LAURA CELIA CARMEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001265069</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> AQUISE LAURA CELIA CARMEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER SANTA ROSA P8 MZA. MAZAA019 URB. PANDO Lima-Lima-San Miguel</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Miguel (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14912904</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14744355</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14573994</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ARANA MARIN JOE MIRCKO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001644732</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ARANA MARIN JOE MIRCKO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. HAYA DE LA TORRE NRO. 633 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14928667</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14842493</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14758687</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CAMARENA LIMACHE MARIA LUISA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759548</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CAMARENA LIMACHE MARIA LUISA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JRMARISCAL CASTILLA 925 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14851177</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14711807</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14563615</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CANGALAYA GUERRERO DE MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001265020</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CANGALAYA GUERRERO DE MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. JIR ATAHUALPA N2317 NRO. 2317 MZA. MAZAA130 URB. URB LAS MORERAS Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14749713</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14592528</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14452678</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CARDOZO QUISPE CARLOS DEMETRIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001734735</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CARDOZO QUISPE CARLOS DEMETRIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. MANTERO NRO. 185 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14573159</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14454093</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14453876</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CASTRO ROJAS MABEL SARA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001637955</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CASTRO ROJAS MABEL SARA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. LA PAZ NRO. 2680 Lima-Lima-San Miguel</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14912473</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14747512</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14668663</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-30 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CHUMPITAZ GAMBOA JUAN CARLOS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001689652</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CHUMPITAZ GAMBOA JUAN CARLOS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CHICAMA NRO. 185 Lima-Lima-San Miguel</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Miguel (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14932993</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14847881</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14763879</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-30 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CONDORI LLAMOCA LIDIA MARILU</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001711096</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CONDORI LLAMOCA LIDIA MARILU</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CESAR VALLEJO MZA. A LOTE. 1 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14910877</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14746228</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14671710</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CORDOVA AGUILAR CRISTHIAN ALEXANDER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004172386</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CORDOVA AGUILAR CRISTHIAN ALEXANDER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av .La paz.2397 las morenas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14915542</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14841188</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14844284</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DELGADO MUNOZ MARIA SANTOS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001265241</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DELGADO MUNOZ MARIA SANTOS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AVE CALLAO N180 NRO. 180 MZA. MAZAA350 URB. BENJAMIN DOIG Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14917485</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14749188</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14667292</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DIAZ BRAVO JENNY NORMA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004181695</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DIAZ BRAVO JENNY NORMA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av. Libertad 2618</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Miguel (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14932944</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14848146</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14763305</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ECHAJAYA CHUMBILE JUANA LUZMILA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001326782</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ECHAJAYA CHUMBILE JUANA LUZMILA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> POR MANZANA MZA. C LOTE. 3 URB. AH LUIS DURAND Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14909558</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14745506</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14745395</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 FERNANDEZ GONZALEZ HERMILDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759569</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> FERNANDEZ GONZALEZ HERMILDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR AYACUCHO NRO. 562 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14762431</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14737150</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-10</td>
+                    <td>S14711856</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GARCIA ARAMBURU RUDY AGUSTINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001714638</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GARCIA ARAMBURU RUDY AGUSTINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PACIFICO NRO. 308 URB. ALTAMAR Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14835096</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>S14018863</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-12</td>
+                    <td>S13338666</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MACEDO JESUS TERESA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001478767</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MACEDO JESUS TERESA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MARIN MZA. H LOTE. 16 URB. ALTAMIRANO Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14907994</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14740815</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14568775</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MELENDRES RAMIREZ CARMEN YULEICY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759611</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MELENDRES RAMIREZ CARMEN YULEICY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE TURMALINA 255 LA PERLA C URB. LA PERLA CALLAO Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14760257</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14445961</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>S14033909</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MENDOZA MAMANI KARLA CYNTHIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001555672</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MENDOZA MAMANI KARLA CYNTHIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ASCOPE NRO. 108 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14748331</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14437096</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14437045</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NINAHUANCA HUATUCO VDA DE BAUTISTA MAURA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759745</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NINAHUANCA HUATUCO VDA DE BAUTISTA MAURA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR AYACUCHO 530 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14583203</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-19</td>
+                    <td>S14199217</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-09</td>
+                    <td>S13939855</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PARIONA BLAS JESSICA PATRICIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759738</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PARIONA BLAS JESSICA PATRICIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. LAS TURBELINAS 221 URB. URB PAYET Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14763124</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14454906</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-22</td>
+                    <td>S14257517</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PEREDA JIMENEZ ELSA MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001544172</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PEREDA JIMENEZ ELSA MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. CAL TURMALINA NRO. 164 URB. BENJAMIN DOIG LOSSIO Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14910078</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14828250</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14664044</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PINILLOS GONZALES CARLOS ALFONSO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004153656</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PINILLOS GONZALES CARLOS ALFONSO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av. Pacífico 327 Urb. Santa Luisa</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14821995</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14592541</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-26</td>
+                    <td>S14367337</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 QUESQUEN ROJAS PATRICIA PAOLA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001568668</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> QUESQUEN ROJAS PATRICIA PAOLA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> NRO. 115 URB. CHEPEN Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14841349</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-09</td>
+                    <td>S14675493</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14573825</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 QUISPE ESPINAL CARMEN ROSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004214888</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> QUISPE ESPINAL CARMEN ROSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> mercado tropical puesto 8 la perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14750115</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14435839</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14435827</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAMIREZ MONTORO DIEGO ELVER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759740</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAMIREZ MONTORO DIEGO ELVER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AV LA PAZ 2389 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14933155</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14594200</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14443111</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 REYES DE VILLALVA MIRTHA LILIANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001265180</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> REYES DE VILLALVA MIRTHA LILIANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PSJ BRASILIA N3 IF6 NRO. 3 MZA. MAZAA370 URB. LA PERLA Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14916801</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14828062</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14828155</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-05</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROSARIO GLADYS AQUISE LAURA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759595</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROSARIO GLADYS AQUISE LAURA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR PATAPO 279 Lima-Lima-San Miguel</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Miguel (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14846372</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14846952</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14452862</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANCA SHO NIKITA YASHICA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004214883</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANCA SHO NIKITA YASHICA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> jr mariscal castilla mz A la 9 la perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-16</td>
+                    <td>S14829871</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14579223</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14440235</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SARMIENTO VEGA LITA GIOVANNA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001457207</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SARMIENTO VEGA LITA GIOVANNA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. PACIFICO NRO. 218 Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14764568</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14594100</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-30</td>
+                    <td>S14451974</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TORRES LAZO JOSE NICACIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001759612</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TORRES LAZO JOSE NICACIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. FEDERICO VILLAREAL 156 URBANIZ URB. URB SIMA LA PERLA CALLAO Callao-Callao-La Perla</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Perla (Callao)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-20</td>
+                    <td>S14933844</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-12</td>
+                    <td>S14737640</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14592941</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS ENRIQUE FERNANDEZ SAAVEDRA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

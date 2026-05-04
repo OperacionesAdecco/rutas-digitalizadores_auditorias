@@ -1,0 +1,2483 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 19 - MARVIN MARCEL ACUÑA TORRES</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 19</h2>
+        <h3>2026-05-04 a 2026-05-10<br>👤 Digitalizador: MARVIN MARCEL ACUÑA TORRES<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 07-05-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_MARVIN_MARCEL_jueves.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 BORDA ESCALANTE NEIDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001673632</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BORDA ESCALANTE NEIDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MZ C LOTE 30 MZA. C LOTE. 30 URB. PORTALES DEL NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14894479</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14894095</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14891595</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CAMPOS MENDOZA JULIA JUANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001710368</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CAMPOS MENDOZA JULIA JUANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE 15 MZ 34 LT 4 URB. URN LAURA CALLER Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14819487</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14733583</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14722458</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CAPCHA RIVERA JUANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004172903</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CAPCHA RIVERA JUANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> M-B  LT-11 ASOC-LOS TULIPANES</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-18</td>
+                    <td>S14172738</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-11</td>
+                    <td>S13326896</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-01-24</td>
+                    <td>S12920402</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CASTILLO AYALA OLGA LUZ</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001460832</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CASTILLO AYALA OLGA LUZ</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AVA M51 LT NRO. 15 URB. ARMANDO VILLANUEVA Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14889128</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13897168</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-14</td>
+                    <td>S13392840</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CONCHA HUACOTO DE FERNANDEZ SILVIA ESPER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001537796</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CONCHA HUACOTO DE FERNANDEZ SILVIA ESPER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MZ G LOTE NRO. 25 URB. LOS PORTALES DEL NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14899949</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14817858</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14548437</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CONTRERAS IBAÑEZ RAQUEL IRMA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001714023</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CONTRERAS IBAÑEZ RAQUEL IRMA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AV MARAÑON 888 NRO. 888 URB. VILLA DEL NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-11</td>
+                    <td>S13983573</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-04</td>
+                    <td>S13820996</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-18</td>
+                    <td>S13472817</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CUTIPA CUTIPA GREGORIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000658010</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CUTIPA CUTIPA GREGORIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER CENTRAL SAN MARTIN DE POR MZA. MAZAA440 URB. LOS OLIVOS Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14812495</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14641045</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14555753</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DE LA CRUZ MEJIA CARLOS ALBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004164608</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DE LA CRUZ MEJIA CARLOS ALBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AH. SAN MARTIN DE PORRES MZ. 159 LT. 1</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-18</td>
+                    <td>S14158892</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-25</td>
+                    <td>S13656054</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-18</td>
+                    <td>S13483845</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ELIAS RAMOS MARIA GLADYS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001722875</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ELIAS RAMOS MARIA GLADYS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE 15 MZ34 LT NRO. 17 URB. LAURA CALLER Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14813499</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14410330</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-04</td>
+                    <td>S13807490</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ESPINOZA SOTO JORGE LUIS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001721628</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ESPINOZA SOTO JORGE LUIS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE GAMINEDES MZ 178 LT NRO. 4 URB. SAN MARTIN DE PORRES CONFRATE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Sin pedidos registrados</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 HERRERA ALVAREZ JOSE LUIS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004192851</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> HERRERA ALVAREZ JOSE LUIS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZ. 12 LT. 37 AA.HH. LAURA CALLER</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14890793</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14723273</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13900528</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 JARA COLONIA BURENICH JHON</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001640295</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> JARA COLONIA BURENICH JHON</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. RIO MARCARA N- 5372 NRO. 5372 URB. VILLA NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14883832</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14819300</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14715566</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 JHIROL EXPORT S.A.C.</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001747416</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> JHIROL EXPORT S.A.C.</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MIRAFLORES MZA. E LOTE. 61 URB. SANTA ELISA Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14803815</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14733999</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14247379</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 JURADO NOA GLORIA ZENOBIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001710591</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> JURADO NOA GLORIA ZENOBIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AAHH LAURA CALLER MZ-20 LT- NRO. 23 Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14802736</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14637434</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14488584</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MEJIA RODRIGUEZ JUDITH</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001734512</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MEJIA RODRIGUEZ JUDITH</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. UNIVERSITARIA MZ24 LT NRO. 24 Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14726813</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13904535</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-28</td>
+                    <td>S13730075</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MONTALVO BARTOLO FLORINDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001713415</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MONTALVO BARTOLO FLORINDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR A SOLOGUREN 408 NRO. 408 URB. VILLA SOL Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14880355</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14712775</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14629941</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PALOMINO PINO EDGAR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004094443</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PALOMINO PINO EDGAR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV MARAÑON N.- 627</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14889558</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14719582</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14546881</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-31</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PEREZ OSCCO MERY CARMEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004192818</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PEREZ OSCCO MERY CARMEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. LAS PALMERAS 5306 URB. VILLA NORTE</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14717272</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-28</td>
+                    <td>S14406273</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13894797</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PILLCO VARGAS CARMEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001747851</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PILLCO VARGAS CARMEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE 20 MZ24 LT NRO. 5 URB. LAURA CALLER Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14883622</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14716804</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14716833</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SILVERIO HUAMANI CECILIA MARGOT</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001755853</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SILVERIO HUAMANI CECILIA MARGOT</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av. Las Palmeras 5266  URB. URB VILLA DEL NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14649299</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-18</td>
+                    <td>S14171728</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-11</td>
+                    <td>S14006978</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-31</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SOTO BLACIDO EDITH MIRENE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004194058</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SOTO BLACIDO EDITH MIRENE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av próceres de huandoy mz 6 lote 22 , avenida Marañón con huandoy al costado de la higuera en toda la esquina</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14247530</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14247685</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13899015</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-12</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SUTIZAL ABAL JUANA ELENA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001523520</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SUTIZAL ABAL JUANA ELENA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZ 10 LOTE NRO. 10 Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14884645</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14647813</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14252766</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TEJADA HINOSTROZA ROCIO PAOLA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001718374</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TEJADA HINOSTROZA ROCIO PAOLA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE THOR MZ 189 LT NRO. 9 URB. VILLA SOL Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14733678</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-25</td>
+                    <td>S14323957</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14249690</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TIENDAS TODO Y MAS PERU S.A.C.</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004175435</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TIENDAS TODO Y MAS PERU S.A.C.</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MARAÑON NRO. 700</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14806917</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14638191</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-06</td>
+                    <td>S14567501</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TRUJILLO GOMERO ELMER WUILLIAMS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001716597</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TRUJILLO GOMERO ELMER WUILLIAMS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AV UNIVERSITARIA MZ-22 LT- NRO. 24 URB. LAURA CALLER Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14882023</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14714366</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14635254</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VALENZUELA GODOY MABEL ELISA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004100244</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VALENZUELA GODOY MABEL ELISA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CALLE 19 MZ 50 LT 17 AAHH ARMANDO VILLANUEVA</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14882377</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-18</td>
+                    <td>S14888856</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14730215</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VEGA FIGUEROA MARGOT TEODORA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001551526</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VEGA FIGUEROA MARGOT TEODORA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. OTR POR MZ M 6A LT NRO. 24 URB. AH LAURA CALLER IBERICO Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14818825</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-01</td>
+                    <td>S14507291</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-18</td>
+                    <td>S14170022</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> NEYVA PATRICIA RODRIGUEZ TAPIA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VILLACRISIS JAYO FRANCISCA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000658239</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VILLACRISIS JAYO FRANCISCA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. OTR MD L27 NRO. 27 MZA. MAZAA020 LOTE. 27 URB. AH PATRIA NUEVA Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-15</td>
+                    <td>S14799877</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14718503</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-08</td>
+                    <td>S14633022</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VILLANUEVA UGARTE VILMA MARTHA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001764337</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VILLANUEVA UGARTE VILMA MARTHA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. RIO BLANCO NRO. 647 URB. VILLA NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14731350</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-11</td>
+                    <td>S14730956</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-25</td>
+                    <td>S14336709</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VILLENA CORREA DE HUAMANI MARISOL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001747115</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VILLENA CORREA DE HUAMANI MARISOL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. LAS PALMERAS NRO. 5346 URB. VILLA NORTE Lima-Lima-Los Olivos</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Los Olivos (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-04</td>
+                    <td>S14561110</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-21</td>
+                    <td>S14253879</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13906093</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-07</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> MARVIN MARCEL ACUÑA TORRES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

@@ -1,0 +1,2427 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 29 - KEELER ABDUL CARRASCO USHIÑAHGUA</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 29</h2>
+        <h3>2026-07-13 a 2026-07-19<br>👤 Digitalizador: KEELER ABDUL CARRASCO USHIÑAHGUA<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 15-07-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_KEELER_ABDUL_miercoles.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ARIAS ALVAREZ PAPIN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001219012</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ARIAS ALVAREZ PAPIN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> OXADILAS 2458 SAN IGNACIO SJL Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16694980</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16597053</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16500782</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BERNAL ESTRELLA CARMEN CECILIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000016259</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BERNAL ESTRELLA CARMEN CECILIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO VIRGEN DEL CARMEN P-47 URB. URB LA HUAYRONA Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16503429</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16470807</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16415363</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CABANILLAS RABANAL SABINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000016256</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CABANILLAS RABANAL SABINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. JIR PIEDRA LUNA N2300 NRO. 2300 MZA. MAZAA170 URB. URB LA HUAYRONA Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16679476</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16679254</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16515644</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CACERES VALENZUELA JOSE ADAN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004023026</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CACERES VALENZUELA JOSE ADAN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Calle las acacias 220</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16692518</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16608627</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16608191</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CCAMA NIFLA PILAR CATALINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000016152</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CCAMA NIFLA PILAR CATALINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. ISABEL II MZA. D LOTE. 32 URB. ASO AYACUCHO Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16684852</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16417859</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16073802</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CCAMA PILARES NIEVES TRINIDAD</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004190998</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CCAMA PILARES NIEVES TRINIDAD</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr. Las estrellas 2745</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16698902</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16675635</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16519538</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-23</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DIAZ CORONADO MARIA ELCITA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001412106</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DIAZ CORONADO MARIA ELCITA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SANTA ELIZABETH NRO. 70 URB. STA ELIZABETH Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16677410</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16677343</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16595943</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GARRO PEBE MIGUEL ANGEL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001741513</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GARRO PEBE MIGUEL ANGEL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR LOS OPALOS 2486 URB JORGE B Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16689053</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16598536</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16423348</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GAVINO CRUZ ELIZABETH MILAGROS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001758595</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GAVINO CRUZ ELIZABETH MILAGROS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. URB JORGE BASADRE AV JORGE BAS URB. URB JORGE BASADRE Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16694451</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-03</td>
+                    <td>S16049780</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-22</td>
+                    <td>S15744454</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 JUSTO JUSTO LELIS KARINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004060418</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> JUSTO JUSTO LELIS KARINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Los zafiros 2403</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16603745</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16505781</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16343121</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MAMANI HUAMAN ALEJANDRINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004022267</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MAMANI HUAMAN ALEJANDRINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado Santa Elizabeth puesto 52 sjl</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16496939</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16412456</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16320299</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-26 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MAMANI PUCUHUANCA ANGELICA DINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004050591</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MAMANI PUCUHUANCA ANGELICA DINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr Retamas y huertos Mz G lote 1 </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16607719</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16424769</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16320896</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-26 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MARINO ZAVALETA DORIS ROXANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004174815</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MARINO ZAVALETA DORIS ROXANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jorge basadre este 122</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16697987</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16610409</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16433270</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 NICACIO GONZALES NOLBERTA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000016217</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> NICACIO GONZALES NOLBERTA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SAN GABRIEL NRO. 115 URB. SAN GABRIEL Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16679991</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16599474</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16496613</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-14</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PAUCAR LOYA ELIZABETH DORIS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001713916</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PAUCAR LOYA ELIZABETH DORIS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MZ C LOTE 10 SAN IGNACIO Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16695117</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16695108</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16598822</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 POLANCO ABRIL PABLO JAVIER</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001683605</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> POLANCO ABRIL PABLO JAVIER</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JRALHEÑAS387 LOTE:30 Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16672514</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16672504</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16492108</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-14</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-02 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PORTILLO TICONA RODRIGO ESTEBAN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004014203</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PORTILLO TICONA RODRIGO ESTEBAN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr Urano 2575. Urb Santa Elizabeth 1era etapa </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16411891</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16339458</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16321358</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAO MALLMA DENISS ANDRES</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004042631</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAO MALLMA DENISS ANDRES</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado Santa Elizabeth psto 70</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16680950</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16595243</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16493502</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-30 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RIVERA PEREZ DE ARROYO ADRIANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001420774</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RIVERA PEREZ DE ARROYO ADRIANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. VIRGEN DEL CARMEN PSTO. 115 Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16597206</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-11</td>
+                    <td>S16244271</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-21</td>
+                    <td>S15695098</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RODRIGUEZ ALVARADO CRISTINA VIVIANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004181447</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RODRIGUEZ ALVARADO CRISTINA VIVIANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av.proceres de la independencia 2274_paradero 17 </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16592223</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16416846</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-11</td>
+                    <td>S16240494</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ROJAS CASIMIRO ROSA ISABEL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001721422</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ROJAS CASIMIRO ROSA ISABEL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR PIEDRA BIGUA 2348 Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16691711</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16514566</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16430793</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RUIZ MUÑOZ DINA ELIZABETH</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001741505</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RUIZ MUÑOZ DINA ELIZABETH</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR LOS OLIGISTOS 2201 URB LA H Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16687578</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16587433</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16324581</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANCHEZ POCOMUCHA SILVIA PAMELA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004185112</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANCHEZ POCOMUCHA SILVIA PAMELA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Asentamiento humano 23 de octubre MZ G lt 4 </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16604683</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16340597</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16059651</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANCHEZ ROJAS GLADYS CARMEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001736440</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANCHEZ ROJAS GLADYS CARMEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> ASENTAMIENTO HUMANO 23 DE OCTU Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16683827</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16601902</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-01</td>
+                    <td>S15984930</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANTISTEBAN YNOÑAN ANA MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004167472</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANTISTEBAN YNOÑAN ANA MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av. Jorge Basadre mz M lote 22 sjl</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16519981</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16519950</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16519934</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-01</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TERRONES VILLALOBOS DE MORALES MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000022917</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TERRONES VILLALOBOS DE MORALES MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. CAL BALDOSAS N156 NRO. 156 MZA. MAZAA160 URB. JORGE BASADRE Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16585592</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16417338</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16063285</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TOCAS INGA DELIA EUGENIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001402559</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TOCAS INGA DELIA EUGENIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. LOS RUBIES NRO. 2284 URB. SAN HILARION Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16609779</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16593949</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16508388</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-02 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-15 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TORRES ROBLES NESTOR BRANYO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004143000</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TORRES ROBLES NESTOR BRANYO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mz U1  Lt 55 san hilarion alto</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16586111</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16504224</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16328287</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VASQUEZ GOICOCHEA LUCIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001763047</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VASQUEZ GOICOCHEA LUCIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CRUCE AV LIMA CUADRA 20 CON AV Lima-Lima-San Juan de Lurigancho</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16607362</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16431746</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16431552</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-01</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-11 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 YUPANQUI CARREÑO ROSA MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004033447</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> YUPANQUI CARREÑO ROSA MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mcd san ignacio pt 23 sjl</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> San Juan de Lurigancho (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16681728</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16496763</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16326179</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-14</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ITALO ALLAUCA ROCHA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> KEELER ABDUL CARRASCO USHIÑAHGUA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

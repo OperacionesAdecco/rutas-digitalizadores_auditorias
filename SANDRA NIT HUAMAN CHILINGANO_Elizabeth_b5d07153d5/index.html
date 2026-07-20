@@ -1,0 +1,3185 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 30 - SANDRA NIT HUAMAN CHILINGANO</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 30</h2>
+        <h3>2026-07-20 a 2026-07-26<br>👤 Digitalizador: SANDRA NIT HUAMAN CHILINGANO<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 21-07-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_SANDRA_NIT_martes.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 ATAUCUSI JAUREGUI MARIO EUSEBIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000661993</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ATAUCUSI JAUREGUI MARIO EUSEBIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MCDO- MDOSANTA LUZMILA PTO- NRO. 16 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16625729</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-23</td>
+                    <td>S16532766</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16448682</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-30 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 AYALA MARIN JENY SANDRA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001522122</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> AYALA MARIN JENY SANDRA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE FRANCISCO ALVARIÑO MZ F MZA. F LOTE. 1 URB. URB EL RETABLO Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16571270</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16557993</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16557988</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-03 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-14</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-26 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 BLAS LOPEZ MAHLI RAQUEL</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004184975</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> BLAS LOPEZ MAHLI RAQUEL</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CALL-PAULA QUIROZ  N-294  SANTA LUZMILA</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16664447</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16662125</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16302881</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CANO BRICEÑO CARMEN ESTELA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004174550</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CANO BRICEÑO CARMEN ESTELA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV GUILLERMO LA FUENTE N.- 226 URB SANTA LUZMILA</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16310538</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-09</td>
+                    <td>S16195804</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-06</td>
+                    <td>S16124081</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-08-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CARTOLIN DE CAPCHA AGRIPINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001746826</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CARTOLIN DE CAPCHA AGRIPINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> PROLONGACION GARCILAZO DE LA V NRO. 445 URB. URB RETABLO Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16560302</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16292422</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-23</td>
+                    <td>S15765588</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CERNA LUNA DE AMES SEVERA YOLANDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001436521</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CERNA LUNA DE AMES SEVERA YOLANDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MCDOSANTA LUZMILA PTO NRO. 3 URB. STA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16602527</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-12</td>
+                    <td>S16282103</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-09</td>
+                    <td>S16195320</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CHUICA ROSAS CESAR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001747425</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CHUICA ROSAS CESAR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> PJE. LAS CASTAÑITAS MZ-M LT- NRO. 12 URB. INFANTAS Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16652512</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16297006</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16296925</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-31 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-02 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CIEZA LOAYZA FANY YANE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001715771</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CIEZA LOAYZA FANY YANE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. RAFAEL ORELLANA NRO. 206 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16654821</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16654734</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16569683</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CRUZ MIRAVAL DOMINGO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001714415</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CRUZ MIRAVAL DOMINGO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CL. CALLE HERMILIO VLADIZAN N- 42 NRO. 42 URB. URB SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16577062</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-13</td>
+                    <td>S16291177</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-10</td>
+                    <td>S16221986</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DAVILA BACULIS ANA MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001404789</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DAVILA BACULIS ANA MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> PJE. SESENTA Y DOS N- NRO. 145 URB. EL RETABLO III RA ETAPA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16665365</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16481464</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16395031</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-14 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DIONICIO CIRIACO CECILIA KETTY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001486305</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DIONICIO CIRIACO CECILIA KETTY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MCDOSTA LUZMILA PTOA NRO. 13 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-09-20</td>
+                    <td>S9875053</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-09-20</td>
+                    <td>S9874962</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2025-08-02</td>
+                    <td>S8626373</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DOMINGUEZ SILVA CLORINDA ESMILA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001437485</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DOMINGUEZ SILVA CLORINDA ESMILA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MDO SANTA LUISA PTO- NRO. 6 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16624011</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16623932</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16448213</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-31 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-03</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 FERNANDEZ MONSALVE MARINO WILTON</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004164589</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> FERNANDEZ MONSALVE MARINO WILTON</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MC. C LT. 1 AA.HH. SAN MIGUELITO INFANTAS</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16654676</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16560598</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16557775</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-01</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-03 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GARCIA PINEDO FREDY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001479905</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GARCIA PINEDO FREDY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. COLLIQUE MZ E1 LTE NRO. 9 URB. EL ALAMO Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16648342</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16576678</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16485942</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-03 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-12</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GODOY CERVANTES OMAR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004180454</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GODOY CERVANTES OMAR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR-MARTIR ARANGURI  N-700-A  SANTA LUZMILA</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16459544</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16459483</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-22</td>
+                    <td>S15728281</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-08 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GONZALES ESPINOZA TEODOLFO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000660271</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GONZALES ESPINOZA TEODOLFO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> PQE. PRO LOS ANGELES N350 NRO. 350 MZA. MAZAA320 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16656759</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-30</td>
+                    <td>S15950062</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-22</td>
+                    <td>S14991665</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MEJIA MEDRANO RUBI YINA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001635085</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MEJIA MEDRANO RUBI YINA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. GUILLERMO LA FUENTE NRO. 435 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16669787</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16668007</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16654415</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-31 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MONTERO RARAZ OTILIA SUZANA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004192218</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MONTERO RARAZ OTILIA SUZANA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> CA. SAN MIGUELITO MZ. C LT. 10 URB. INFANTAS</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16469693</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16468908</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-20</td>
+                    <td>S15676944</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-02</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MOSTACERO PLASENCIA EBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001713722</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MOSTACERO PLASENCIA EBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR LAS AMERICAS 372 NRO. 372 URB. RETABLO I ETAPA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16580904</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-16</td>
+                    <td>S16375042</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-16</td>
+                    <td>S16374764</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-14</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-26 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-21</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-30</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 OSORIO AVILA MARIBEL LUZ</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001026007</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> OSORIO AVILA MARIBEL LUZ</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SANTA LUISA PTO. 26 URB. SANTA LUISA</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2025-08-20</td>
+                    <td>S9065638</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PIZARRO ALVAREZ JOSE DARLY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001504739</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PIZARRO ALVAREZ JOSE DARLY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SANTA LUZMILA PTO- NRO. 6 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-21</td>
+                    <td>S14959742</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-07</td>
+                    <td>S14605118</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-10</td>
+                    <td>S13979132</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAMIREZ ANAYA BELEN DE MARIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001551528</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAMIREZ ANAYA BELEN DE MARIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SANTA LUZMILA PTO- NRO. 117 Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16638969</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-23</td>
+                    <td>S16536351</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16461943</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-04-13</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-04 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAMIREZ ANAYA CARMEN VANESA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001009415</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAMIREZ ANAYA CARMEN VANESA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. SANTA LUZMILA PTO NRO. 10 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16638517</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16638498</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-23</td>
+                    <td>S16536570</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-08 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 REQUEJO ROJAS LEVI GERSON</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001762643</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> REQUEJO ROJAS LEVI GERSON</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. BERNARDO MONTEAGUADO NRO. 200 URB. RETABLO Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16668735</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16555664</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16382819</td>
+                    <td>Vendedor</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RICALDI FABIAN LILIANA MARGOT</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001646923</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RICALDI FABIAN LILIANA MARGOT</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. JOSE DE LA TORRE UGARTE NRO. 138 URB. EL RETABLO I ETAPA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16392955</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-20</td>
+                    <td>S15670615</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-06</td>
+                    <td>S15317083</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-28</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-04-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-05 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-04</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RIVEROS BAUTISTA LEONCIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C000662269</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RIVEROS BAUTISTA LEONCIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ARGENTINA NRO. 765 MZA. MAZAA030 URB. SANTA LUZMILA/AVE DE LA FUENTE Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16652444</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16560508</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16382364</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-11-19 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-08</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RUBIN VILLARREAL JUAN JOSE</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001493071</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RUBIN VILLARREAL JUAN JOSE</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. AVGUILLERMO DE LA FUENTE N NRO. 250 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-03-09</td>
+                    <td>S13948905</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-25</td>
+                    <td>S11498554</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2025-11-22</td>
+                    <td>S11445474</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-28</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SILVA VELAZCO LAURA JACINTA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001551793</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SILVA VELAZCO LAURA JACINTA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MERCADO SR DE LOS MILAGROS PUE NRO. 04 Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16653103</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16653030</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16561315</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-10 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-01</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-15</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VELAZCO VICENTE DE QUISPE MARIA ORMINDA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001756184</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VELAZCO VICENTE DE QUISPE MARIA ORMINDA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JR LORENZO BARDERRAMA 438 NRO. 27 Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-06</td>
+                    <td>S16112249</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-06</td>
+                    <td>S16112017</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-20</td>
+                    <td>S15677729</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-09</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> BRYAN SMITH PAREDES MALCA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-02-16</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-16 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-01-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-03 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VILLA TEMPLE JESSICA INGRID</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001493070</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VILLA TEMPLE JESSICA INGRID</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. STA LUZMILA PTO NRO. 43 URB. SANTA LUZMILA Lima-Lima-Comas</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Comas (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-26</td>
+                    <td>S16642433</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-23</td>
+                    <td>S16535059</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-19</td>
+                    <td>S16463759</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-06</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> SARINA TABITA MEDINA COLLANTES<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-06 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-10-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-29</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Vendedor<br>
+            <b>Digitalizador:</b> SANDRA NIT HUAMAN CHILINGANO<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-10-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

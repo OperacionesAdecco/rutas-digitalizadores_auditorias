@@ -1,0 +1,2277 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 30 - ISMAEL JHAIR HERRERA MALABER</title>
+
+<<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+body {
+    padding: 12px;
+}
+
+.box {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow-x: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0078ff, #00a8ff);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.header h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.day-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.day-summary {
+    padding: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    background: #f8fafc;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.day-summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-summary::after {
+    content: "▼";
+    float: right;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+details[open] > .day-summary::after {
+    content: "▲";
+}
+
+.map-box {
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: block;
+}
+
+.client-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.client-summary {
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 14px;
+    background: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.client-summary::-webkit-details-marker {
+    display: none;
+}
+
+.client-summary::after {
+    content: "＋";
+    float: right;
+    font-size: 18px;
+    color: #0078ff;
+}
+
+details[open] > .client-summary::after {
+    content: "－";
+}
+
+.client-content {
+    padding: 0 14px 14px 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.info-box {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.info-line {
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-line:last-child {
+    margin-bottom: 0;
+}
+
+.info-label-inline {
+    font-weight: bold;
+    color: #374151;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 18px 0 10px 0;
+    color: #0078ff;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+.table-mini {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-mini th {
+    background: #0078ff;
+    color: white;
+    padding: 8px 6px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.table-mini td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.hist-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #0078ff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.empty-box {
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    color: #6b7280;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nav-top {
+    margin-bottom: 18px;
+}
+
+.nav-top a {
+    display: inline-block;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    iframe {
+        height: 520px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .table-mini th,
+    .table-mini td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+    <div class="header">
+        <h2>📅 Semana 30</h2>
+        <h3>2026-07-20 a 2026-07-26<br>👤 Digitalizador: ISMAEL JHAIR HERRERA MALABER<br>👨‍💼 Supervisor: Elizabeth</h3>
+    </div>
+
+            <details class="day-card">
+                <summary class="day-summary">📅 20-07-2026 (30 clientes)</summary>
+                
+                <div class="map-box">
+                    <iframe src="./mapa_ISMAEL_JHAIR_lunes.html"></iframe>
+                </div>
+                
+            
+<details class="client-card">
+    <summary class="client-summary">🔹 APAZA FONSECA FRANCISCO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001455827</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> APAZA FONSECA FRANCISCO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. JORGE CHAVEZ PTO 48A PSTO. 70 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16664797</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16564199</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16558949</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CACEDA ESPINOZA ANDREA XIOMARA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001677633</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CACEDA ESPINOZA ANDREA XIOMARA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ANCASH NRO. 1447 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16697699</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16567658</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16567135</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-24 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CANGALAYA YGREDA SILVIA AURORA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001658156</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CANGALAYA YGREDA SILVIA AURORA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. JUNNIN NRO. 1776 INT. 123 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16695068</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16693143</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16515140</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CASTRO ROMERO ALBERTO SANTIAGO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004177066</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CASTRO ROMERO ALBERTO SANTIAGO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR García naranjo 1304 la victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16696031</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16695842</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16602967</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-09-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> OSMAR WANDERLEY DUEÑAS DUEÑAS<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-09-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-08-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> LUIS AGUSTIN JUAREZ SIANCAS<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-08-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CENTENO TOMAS OMAR ALONSO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001689846</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CENTENO TOMAS OMAR ALONSO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MCDO SR DE LA JUSTICIA PTO1 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-30</td>
+                    <td>S15199113</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-26</td>
+                    <td>S13685707</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-16</td>
+                    <td>S13433276</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 CORDOVA QUISPE HERSHINO RONNY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001271913</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> CORDOVA QUISPE HERSHINO RONNY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MER COOP MERCEDARIAS PTO-19 NRO. 192 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16683577</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16594558</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16501391</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DAMARO EIRL </summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001765761</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DAMARO EIRL </div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ANCASH NRO. 1001 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16589254</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16589174</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16520415</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 DONAYRE LETURIA DEMETRIA CARMEN</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001271896</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> DONAYRE LETURIA DEMETRIA CARMEN</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ANCASH NRO. 1234 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16677732</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16321573</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-11</td>
+                    <td>S16251883</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-21 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 ESTRADA RODRIGUEZ ROSARIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001637195</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> ESTRADA RODRIGUEZ ROSARIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. MCDO BUENOS AIRES PTO37 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16603880</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16428087</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16072647</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 FLORES RAMOS CARMEN ROSA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001712862</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> FLORES RAMOS CARMEN ROSA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ANCASH NRO. 1240 URB. BARRIOS ALTOS Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16695097</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16678461</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16508058</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GARCIA DE MACHUCA LOURDES ANGELICA ‒ 29579048</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004221900</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GARCIA DE MACHUCA LOURDES ANGELICA ‒ 29579048</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr. Ancash 1239</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16331485</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-01</td>
+                    <td>S15978169</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-25</td>
+                    <td>S15782854</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-01</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 GUANILO PEREZ JOSE LUIS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004214761</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> GUANILO PEREZ JOSE LUIS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr Junin 298</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16584334</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16410737</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16410363</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 INOÑAN FERNANDEZ CORINA OFELIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001555650</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> INOÑAN FERNANDEZ CORINA OFELIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. COOPERTAIVA MERCEDARIA PTO NRO. 87 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16689429</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16564994</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16415366</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 JULCA APOLINARIO WILLIAM JULIO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004178687</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> JULCA APOLINARIO WILLIAM JULIO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado jorge chavez puesto462 pasjee 4</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16670810</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16670791</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16645917</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-10</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-13 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LA ROSA CASAS MILAGROS DE LOS ANGELES ‒ 10704965384</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004240887</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LA ROSA CASAS MILAGROS DE LOS ANGELES ‒ 10704965384</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr coronel zubiaga 353</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16676396</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16054434</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-01</td>
+                    <td>S15967122</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 LOARDO RIOS ALEX</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001418618</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> LOARDO RIOS ALEX</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MCDO. BUENOS AIRES NRO. 68 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16603654</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-08</td>
+                    <td>S16163161</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-25</td>
+                    <td>S15800671</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-22</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-12</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-12 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-22 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 MAMANI ARI LUCY HIRENI</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001743171</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> MAMANI ARI LUCY HIRENI</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. BAUZATE Y MEZA NRO. 2192 Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16490468</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-23</td>
+                    <td>S15755925</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-20</td>
+                    <td>S15678153</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-23</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-11-11</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 PISFIL FLORES ELA CLORINDA </summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001716775</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> PISFIL FLORES ELA CLORINDA </div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR. ANCASH NRO. 314 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16585563</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16408449</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-11</td>
+                    <td>S16253763</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 QUIÑONES MENDOZA ALEJANDRO TIMOTEO ‒ 03701997</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004238211</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> QUIÑONES MENDOZA ALEJANDRO TIMOTEO ‒ 03701997</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> JR.paruro n°250-A cercado de lima </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16611586</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16433302</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16343255</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RAMOS RODRIGUEZ ZENAIDA LEONOR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004202641</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RAMOS RODRIGUEZ ZENAIDA LEONOR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado Santa Rosa Pto 38 JR. Ancash 1344</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16604676</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16509850</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16379951</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-17 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-28 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-09 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 REYES URBANO AJIB JESUS</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004212675</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> REYES URBANO AJIB JESUS</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Jr andahuaylas 159 mdo inmaculada cpncepcion 1389</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16673407</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16584289</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16494042</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-18</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-05-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-03-20</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-03-23 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 REYES URBANO VILMA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001432432</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> REYES URBANO VILMA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> ANDAHUAYLAS NRO. 1036 URB. MDO AMAZONAS D86 PSTO. 1036 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-15</td>
+                    <td>S16317183</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-08</td>
+                    <td>S16138844</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16051870</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-25</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-01 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RODAS GUIZADO VICTORIA</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001271906</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RODAS GUIZADO VICTORIA</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MER COOP MERCEDARIAS PTO 175 PSTO. 176 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16690668</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-18</td>
+                    <td>S16420427</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-11</td>
+                    <td>S16251917</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-18 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2025-12-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2025-12-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 RODRIGUEZ ARROYO CARMEN PILAR</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001271904</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> RODRIGUEZ ARROYO CARMEN PILAR</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> MER COOPMERCEDARIAS NRO. 53.54 URB. BARRIOS ALTOS PSTO. 53 Lima-Lima-Lima</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16691936</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16675206</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-25</td>
+                    <td>S16585833</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-24</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-25 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SACCATOMA CAJACURI EVELYN ANDREA ‒ 10755629419</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004221124</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SACCATOMA CAJACURI EVELYN ANDREA ‒ 10755629419</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado jorge Chávez pto 52-53</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-04-29</td>
+                    <td>S15166384</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-04-13</td>
+                    <td>S14767432</td>
+                    <td>Vendedor</td>
+                </tr>
+
+                <tr>
+                    <td>2026-03-07</td>
+                    <td>S13912544</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-05-23</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SACCATOMA MALDONADO OSWALDO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C001269446</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SACCATOMA MALDONADO OSWALDO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> AV. MER JORGE CHAVEZ P810 MZA. MAZAA460 URB. LA VICTORIA Lima-Lima-La Victoria</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16570514</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16489891</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-20</td>
+                    <td>S16489871</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-19</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-20 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SALCEDO MAMANI ANITA ARIS </summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004201481</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SALCEDO MAMANI ANITA ARIS </div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Manzanilla 2 mza. M3 lote32</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-29</td>
+                    <td>S16689559</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-22</td>
+                    <td>S16517309</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-08</td>
+                    <td>S16156551</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-29 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 SANCHEZ OSORES LUIS ALBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004201992</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> SANCHEZ OSORES LUIS ALBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Av Bauzate y Meza 2284</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16652926</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-01</td>
+                    <td>S15989827</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-30</td>
+                    <td>S15960634</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-23</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+        <div class="hist-card">
+            <b>📅 2026-01-27</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Cliente<br>
+            <b>Digitalizador:</b> CAROL MELISSA AVILA HERRADA<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-02-07 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 TERREROS CHANCA RODOLFO ROBERTO</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004185704</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> TERREROS CHANCA RODOLFO ROBERTO</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Puesto 486_487 mercado Jorge Chavez </div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> La Victoria (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-27</td>
+                    <td>S16670976</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-24</td>
+                    <td>S16563897</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-17</td>
+                    <td>S16386369</td>
+                    <td>Cliente</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-26</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> Nitro<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> 2026-06-27 00:00:00<br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+
+<details class="client-card">
+    <summary class="client-summary">🔹 VILA POMASUNCO JENNEFEER FANNY</summary>
+
+    <div class="client-content">
+        <div class="info-box">
+            <div class="info-line"><span class="info-label-inline">Código:</span> C004205465</div>
+            <div class="info-line"><span class="info-label-inline">Cliente:</span> VILA POMASUNCO JENNEFEER FANNY</div>
+            <div class="info-line"><span class="info-label-inline">Dirección:</span> Mercado mercedarias pto 262</div>
+            <div class="info-line"><span class="info-label-inline">Distrito:</span> Lima (Lima)</div>
+            <div class="info-line"><span class="info-label-inline">Tipo Documento:</span> </div>
+            <div class="info-line"><span class="info-label-inline">Documento:</span> </div>
+        </div>
+
+        <div class="section-title">📦 Últimos 3 pedidos</div>
+        <div class="table-scroll">
+            <table class="table-mini">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Origen</th>
+                </tr>
+
+                <tr>
+                    <td>2026-06-04</td>
+                    <td>S16061567</td>
+                    <td>Cliente</td>
+                </tr>
+
+                <tr>
+                    <td>2026-06-01</td>
+                    <td>S15982729</td>
+                    <td>Nitro</td>
+                </tr>
+
+                <tr>
+                    <td>2026-05-28</td>
+                    <td>S15884238</td>
+                    <td>Nitro</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="section-title">📘 Histórico de Capacitación</div>
+
+        <div class="hist-card">
+            <b>📅 2026-06-17</b><br>
+            <b>Tipo:</b> <br>
+            <b>Origen Pedido:</b> No Hizo pedido<br>
+            <b>Digitalizador:</b> ISMAEL JHAIR HERRERA MALABER<br>
+            <b>Motivo no capacitado:</b> <br>
+            <b>Fecha Pedido:</b> <br>
+            <b>Código Pedido:</b> 
+        </div>
+
+    </div>
+</details>
+</details>
+</div>
+</body>
+</html>

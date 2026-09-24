@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8927b6fda8030ead0fad51161a555d2a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <style>.leaflet-control-attribution{display:none!important}</style>
+    
+            <div class="folium-map" id="map_8927b6fda8030ead0fad51161a555d2a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8927b6fda8030ead0fad51161a555d2a = L.map(
+                "map_8927b6fda8030ead0fad51161a555d2a",
+                {
+                    center: [-12.0558827, -77.0560583],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c291ad818aff632f4806bee798646486 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c291ad818aff632f4806bee798646486.addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var marker_a99d336d812918fbae9791bdf895b606 = L.marker(
+                [-12.0558827, -77.0560583],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_5e15d257da78073a8cd99362bc6443b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13912d959ab40f60dfb64dd0f32e028c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_735850b3a4415c37c6f3a96472bbe796 = $(`<div id="html_735850b3a4415c37c6f3a96472bbe796" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>INVERSIONES Y REPRESENTACIONES LIZFRANJ</b><br>                 <b>Codigo:</b> C001740868<br>                 <b>Direccion:</b> AV. VENEZUELA NRO. 1698 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0558827,-77.0560583'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0558827,-77.0560583&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_13912d959ab40f60dfb64dd0f32e028c.setContent(html_735850b3a4415c37c6f3a96472bbe796);
+            
+        
+
+        marker_a99d336d812918fbae9791bdf895b606.bindPopup(popup_13912d959ab40f60dfb64dd0f32e028c)
+        ;
+
+        
+    
+    
+                marker_a99d336d812918fbae9791bdf895b606.setIcon(icon_5e15d257da78073a8cd99362bc6443b6);
+            
+    
+            var marker_4c11beefa5c55c7ad2761c27a8738456 = L.marker(
+                [-12.05569, -77.0549],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_da623d3d5659413aa76f29a9219606da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90f6500165dd25a182bc6da88e2cd570 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_536d51653f1a90fea07ff3286252b002 = $(`<div id="html_536d51653f1a90fea07ff3286252b002" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>PARODI SAYAS RAFAEL</b><br>                 <b>Codigo:</b> C001756619<br>                 <b>Direccion:</b> AV. AV VENEZUELA 1614 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05569,-77.0549'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05569,-77.0549&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_90f6500165dd25a182bc6da88e2cd570.setContent(html_536d51653f1a90fea07ff3286252b002);
+            
+        
+
+        marker_4c11beefa5c55c7ad2761c27a8738456.bindPopup(popup_90f6500165dd25a182bc6da88e2cd570)
+        ;
+
+        
+    
+    
+                marker_4c11beefa5c55c7ad2761c27a8738456.setIcon(icon_da623d3d5659413aa76f29a9219606da);
+            
+    
+            var marker_5ec6ba25f8a26ab2b354038cd165c988 = L.marker(
+                [-12.0549312, -77.0529419],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_8331d87274ad1cad177e5aa6940eaf71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab4681a0f4fda17cfc6e9df2a349a491 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_53e3eaa5e777f17e7ee509faa6a87c02 = $(`<div id="html_53e3eaa5e777f17e7ee509faa6a87c02" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>FLORES APAZA ERNESTINA</b><br>                 <b>Codigo:</b> C001388346<br>                 <b>Direccion:</b> JR. SUCCHA NRO. 356 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0549312,-77.0529419'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0549312,-77.0529419&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_ab4681a0f4fda17cfc6e9df2a349a491.setContent(html_53e3eaa5e777f17e7ee509faa6a87c02);
+            
+        
+
+        marker_5ec6ba25f8a26ab2b354038cd165c988.bindPopup(popup_ab4681a0f4fda17cfc6e9df2a349a491)
+        ;
+
+        
+    
+    
+                marker_5ec6ba25f8a26ab2b354038cd165c988.setIcon(icon_8331d87274ad1cad177e5aa6940eaf71);
+            
+    
+            var marker_dc10d4c5446ab11781164d288744a229 = L.marker(
+                [-12.054301, -77.053244],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_163960439adb57fa7dae16dae8de3974 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2ccaf78d6b3e9a129cd6c11cfe7b827 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c96d92b8e641d92e5876b3c9b6ff96a5 = $(`<div id="html_c96d92b8e641d92e5876b3c9b6ff96a5" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>AYQUIPA ALLCCARIMA RAYZA ALEXANDRA</b><br>                 <b>Codigo:</b> C004219206<br>                 <b>Direccion:</b> Jr. Carhuaz 1098 breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.054301,-77.053244'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.054301,-77.053244&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_f2ccaf78d6b3e9a129cd6c11cfe7b827.setContent(html_c96d92b8e641d92e5876b3c9b6ff96a5);
+            
+        
+
+        marker_dc10d4c5446ab11781164d288744a229.bindPopup(popup_f2ccaf78d6b3e9a129cd6c11cfe7b827)
+        ;
+
+        
+    
+    
+                marker_dc10d4c5446ab11781164d288744a229.setIcon(icon_163960439adb57fa7dae16dae8de3974);
+            
+    
+            var marker_854e755a76c3ba81a246bf32dd492cce = L.marker(
+                [-12.05313, -77.05444],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_c9a7cebfb70e4e089d2e05b72ee77643 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e7295fb687db6fb7c78446c44edf32c1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ab0ce08cf1c0906570eec3c265e55135 = $(`<div id="html_ab0ce08cf1c0906570eec3c265e55135" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>CHUQUIYURI CONTRERAS FABIAN</b><br>                 <b>Codigo:</b> C004032794<br>                 <b>Direccion:</b> Jr. Manoa Pto 133  - Mdo Manoa<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05313,-77.05444'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05313,-77.05444&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_e7295fb687db6fb7c78446c44edf32c1.setContent(html_ab0ce08cf1c0906570eec3c265e55135);
+            
+        
+
+        marker_854e755a76c3ba81a246bf32dd492cce.bindPopup(popup_e7295fb687db6fb7c78446c44edf32c1)
+        ;
+
+        
+    
+    
+                marker_854e755a76c3ba81a246bf32dd492cce.setIcon(icon_c9a7cebfb70e4e089d2e05b72ee77643);
+            
+    
+            var marker_9f8b7690e171c5b81b44239f03f98df1 = L.marker(
+                [-12.053234, -77.0508594],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_dfd2b80747dd30415e2051a1ddf1f57e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b1dcbc9b6e5f3818df6b0e9cfe4e9de = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d6f95f795441651553c6800dee0d05c7 = $(`<div id="html_d6f95f795441651553c6800dee0d05c7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>ZARPAN MUGA MANUELA EMPERATRIZ</b><br>                 <b>Codigo:</b> C001707446<br>                 <b>Direccion:</b> JR. YANGAS NRO. 244 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.053234,-77.0508594'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.053234,-77.0508594&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_0b1dcbc9b6e5f3818df6b0e9cfe4e9de.setContent(html_d6f95f795441651553c6800dee0d05c7);
+            
+        
+
+        marker_9f8b7690e171c5b81b44239f03f98df1.bindPopup(popup_0b1dcbc9b6e5f3818df6b0e9cfe4e9de)
+        ;
+
+        
+    
+    
+                marker_9f8b7690e171c5b81b44239f03f98df1.setIcon(icon_dfd2b80747dd30415e2051a1ddf1f57e);
+            
+    
+            var marker_90f4634d30fc9d8952fbf34021a513cc = L.marker(
+                [-12.05397, -77.04975],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_47cee2fc0400daf18af9f34833c295ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86dcebe04a7feccf07fb4761bd33e8ac = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5a5883e9f75ca78fc502fbb2f0c3a3dd = $(`<div id="html_5a5883e9f75ca78fc502fbb2f0c3a3dd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>PUENTE SOTO GLADYS LIDIA</b><br>                 <b>Codigo:</b> C000405471<br>                 <b>Direccion:</b> CL. JIR CARHUAZ N640 P29 NRO. 640 MZA. MAZAA270 URB. BRE A Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05397,-77.04975'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05397,-77.04975&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_86dcebe04a7feccf07fb4761bd33e8ac.setContent(html_5a5883e9f75ca78fc502fbb2f0c3a3dd);
+            
+        
+
+        marker_90f4634d30fc9d8952fbf34021a513cc.bindPopup(popup_86dcebe04a7feccf07fb4761bd33e8ac)
+        ;
+
+        
+    
+    
+                marker_90f4634d30fc9d8952fbf34021a513cc.setIcon(icon_47cee2fc0400daf18af9f34833c295ba);
+            
+    
+            var marker_f459dda44f82a326096fff515c5dc674 = L.marker(
+                [-12.05411, -77.04916],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_35f4d150d8b435be6f51a7ea0a51a26e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1dc19be1ab7e20d92b59184aa9170e36 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_611d70a8ecf3fc314fb3efb4fbb32ce1 = $(`<div id="html_611d70a8ecf3fc314fb3efb4fbb32ce1" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>PEÑA CHANTA HILDA</b><br>                 <b>Codigo:</b> C001445671<br>                 <b>Direccion:</b> JR. LORETO NRO. 398 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05411,-77.04916'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05411,-77.04916&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_1dc19be1ab7e20d92b59184aa9170e36.setContent(html_611d70a8ecf3fc314fb3efb4fbb32ce1);
+            
+        
+
+        marker_f459dda44f82a326096fff515c5dc674.bindPopup(popup_1dc19be1ab7e20d92b59184aa9170e36)
+        ;
+
+        
+    
+    
+                marker_f459dda44f82a326096fff515c5dc674.setIcon(icon_35f4d150d8b435be6f51a7ea0a51a26e);
+            
+    
+            var marker_5a755bf06ba9e81da4d9ce665a4e365b = L.marker(
+                [-12.0531498, -77.049226],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_2bb9b5b2facf349ada276033dea05adf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b313ab0b18232c201e0895d421414aa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_216a6b46f05d767383f531ebe55c7cd9 = $(`<div id="html_216a6b46f05d767383f531ebe55c7cd9" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>ORTIZ CAMPOS MARIA ROSALITA ‒ 10429521039</b><br>                 <b>Codigo:</b> C004236486<br>                 <b>Direccion:</b> Jr. Loreto 334 pto 3 int 8<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0531498,-77.049226'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0531498,-77.049226&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_6b313ab0b18232c201e0895d421414aa.setContent(html_216a6b46f05d767383f531ebe55c7cd9);
+            
+        
+
+        marker_5a755bf06ba9e81da4d9ce665a4e365b.bindPopup(popup_6b313ab0b18232c201e0895d421414aa)
+        ;
+
+        
+    
+    
+                marker_5a755bf06ba9e81da4d9ce665a4e365b.setIcon(icon_2bb9b5b2facf349ada276033dea05adf);
+            
+    
+            var marker_57dc32b8a91eef46bd47dfd751c64144 = L.marker(
+                [-12.0528832, -77.0492193],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_1b9f52b4d5fa6956ee8ddc2297f95b21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4af604dcde269a0563801035dbe4b87 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e4cfafe5687c30490405fe4d89721aea = $(`<div id="html_e4cfafe5687c30490405fe4d89721aea" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>GARCIA PIZARRO CARMEN ELVIRA</b><br>                 <b>Codigo:</b> C001514671<br>                 <b>Direccion:</b> JR. LORETO NRO. 318 INT. 2 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0528832,-77.0492193'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0528832,-77.0492193&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_c4af604dcde269a0563801035dbe4b87.setContent(html_e4cfafe5687c30490405fe4d89721aea);
+            
+        
+
+        marker_57dc32b8a91eef46bd47dfd751c64144.bindPopup(popup_c4af604dcde269a0563801035dbe4b87)
+        ;
+
+        
+    
+    
+                marker_57dc32b8a91eef46bd47dfd751c64144.setIcon(icon_1b9f52b4d5fa6956ee8ddc2297f95b21);
+            
+    
+            var marker_faedc2206eb7c4e8486db505e00186dc = L.marker(
+                [-12.0528593, -77.0491791],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_4f12cf9d7e41c925c7fbd1792546b1a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46a20170d152a5c230a4937dc1f65c3a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_996548270ecc46f68ebf2c31d1695fd1 = $(`<div id="html_996548270ecc46f68ebf2c31d1695fd1" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>VILLAR CANIHUA JESUS ALAN TOMAS</b><br>                 <b>Codigo:</b> C004181567<br>                 <b>Direccion:</b> JR. Loreto # 318 Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0528593,-77.0491791'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0528593,-77.0491791&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_46a20170d152a5c230a4937dc1f65c3a.setContent(html_996548270ecc46f68ebf2c31d1695fd1);
+            
+        
+
+        marker_faedc2206eb7c4e8486db505e00186dc.bindPopup(popup_46a20170d152a5c230a4937dc1f65c3a)
+        ;
+
+        
+    
+    
+                marker_faedc2206eb7c4e8486db505e00186dc.setIcon(icon_4f12cf9d7e41c925c7fbd1792546b1a2);
+            
+    
+            var marker_911c05b74f0e193ff72115e4094ec09a = L.marker(
+                [-12.0552224, -77.0496592],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_d1b75dd871535fc7161c699f047c492d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86d3104c11b4b486301ba3778c833496 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5463870b43713d566c64576bb7d5e11b = $(`<div id="html_5463870b43713d566c64576bb7d5e11b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>BRANZO E.I.R.L. ‒ 20551070418</b><br>                 <b>Codigo:</b> C004236960<br>                 <b>Direccion:</b> AV. VENEZUELA NRO. 1119 - LIMA LIMA BREÑA<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0552224,-77.0496592'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0552224,-77.0496592&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_86d3104c11b4b486301ba3778c833496.setContent(html_5463870b43713d566c64576bb7d5e11b);
+            
+        
+
+        marker_911c05b74f0e193ff72115e4094ec09a.bindPopup(popup_86d3104c11b4b486301ba3778c833496)
+        ;
+
+        
+    
+    
+                marker_911c05b74f0e193ff72115e4094ec09a.setIcon(icon_d1b75dd871535fc7161c699f047c492d);
+            
+    
+            var marker_bed6d7f9d9edec4d5b2960644ece0cb3 = L.marker(
+                [-12.0575972, -77.0484431],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_615dcb8baa928bcf30ff8ab54f81eb94 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2854edcaccb00bd88760cd54b476e84 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_df70e9cbf22ca271f27c1aa056269a95 = $(`<div id="html_df70e9cbf22ca271f27c1aa056269a95" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>PARRAGUEZ MEZA FELIX</b><br>                 <b>Codigo:</b> C001497606<br>                 <b>Direccion:</b> AV. PORTUGAL NRO. 601 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0575972,-77.0484431'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0575972,-77.0484431&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_c2854edcaccb00bd88760cd54b476e84.setContent(html_df70e9cbf22ca271f27c1aa056269a95);
+            
+        
+
+        marker_bed6d7f9d9edec4d5b2960644ece0cb3.bindPopup(popup_c2854edcaccb00bd88760cd54b476e84)
+        ;
+
+        
+    
+    
+                marker_bed6d7f9d9edec4d5b2960644ece0cb3.setIcon(icon_615dcb8baa928bcf30ff8ab54f81eb94);
+            
+    
+            var marker_63930c027533a75470de90bd9e06d9df = L.marker(
+                [-12.0580831, -77.0497192],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_eee54e1b7e371eac380e936454508a2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cfea7f89eecd580aff24b7e708eaafa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dcdd43b23a898392d76545621a246f16 = $(`<div id="html_dcdd43b23a898392d76545621a246f16" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>MORENO BRAVO ELSA TEODOSIA</b><br>                 <b>Codigo:</b> C004188074<br>                 <b>Direccion:</b> JR CARAVELY  NRO 910<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0580831,-77.0497192'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0580831,-77.0497192&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_4cfea7f89eecd580aff24b7e708eaafa.setContent(html_dcdd43b23a898392d76545621a246f16);
+            
+        
+
+        marker_63930c027533a75470de90bd9e06d9df.bindPopup(popup_4cfea7f89eecd580aff24b7e708eaafa)
+        ;
+
+        
+    
+    
+                marker_63930c027533a75470de90bd9e06d9df.setIcon(icon_eee54e1b7e371eac380e936454508a2a);
+            
+    
+            var marker_7a5d6a63a87df867a5683a632138f68d = L.marker(
+                [-12.05858, -77.05004],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_e29ff1cfef98b3464a3d49bd446c8760 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_961d9dd2f66fb4250ff88d5d4717e31c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bcd49f1fa8234ad22c0c6bcbad883b5e = $(`<div id="html_bcd49f1fa8234ad22c0c6bcbad883b5e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>REQUIS RIVAS MIGUEL ANGEL</b><br>                 <b>Codigo:</b> C001737772<br>                 <b>Direccion:</b> CL. CARAVELI NRO. 952 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05858,-77.05004'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05858,-77.05004&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_961d9dd2f66fb4250ff88d5d4717e31c.setContent(html_bcd49f1fa8234ad22c0c6bcbad883b5e);
+            
+        
+
+        marker_7a5d6a63a87df867a5683a632138f68d.bindPopup(popup_961d9dd2f66fb4250ff88d5d4717e31c)
+        ;
+
+        
+    
+    
+                marker_7a5d6a63a87df867a5683a632138f68d.setIcon(icon_e29ff1cfef98b3464a3d49bd446c8760);
+            
+    
+            var marker_36cb9fccab9179b6c0f95b798bf0f8bb = L.marker(
+                [-12.059027, -77.050078],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_9959f5bfd1525145d53a10e009b81589 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba39415376b21e6fecf4cd15deb3fbb9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0f578f3e9ce24923888166da267e2b46 = $(`<div id="html_0f578f3e9ce24923888166da267e2b46" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>GIRON RODRIGUEZ SANTOS</b><br>                 <b>Codigo:</b> C004179972<br>                 <b>Direccion:</b> Calle olmedo 699<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.059027,-77.050078'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.059027,-77.050078&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_ba39415376b21e6fecf4cd15deb3fbb9.setContent(html_0f578f3e9ce24923888166da267e2b46);
+            
+        
+
+        marker_36cb9fccab9179b6c0f95b798bf0f8bb.bindPopup(popup_ba39415376b21e6fecf4cd15deb3fbb9)
+        ;
+
+        
+    
+    
+                marker_36cb9fccab9179b6c0f95b798bf0f8bb.setIcon(icon_9959f5bfd1525145d53a10e009b81589);
+            
+    
+            var marker_52ff7d91b130c7d01e9850071b1bb645 = L.marker(
+                [-12.060114, -77.0504696],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_0419e43b6e1911256e1c1f6843056442 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63486d47155bb6b629e781c0b0978d68 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3f0eeb46a84cd38afdb9af78a3146d81 = $(`<div id="html_3f0eeb46a84cd38afdb9af78a3146d81" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>DIAZ PONCE ANA PATRICIA</b><br>                 <b>Codigo:</b> C001735526<br>                 <b>Direccion:</b> MCDO. MDO SAN JOSE PTO 22 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.060114,-77.0504696'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.060114,-77.0504696&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_63486d47155bb6b629e781c0b0978d68.setContent(html_3f0eeb46a84cd38afdb9af78a3146d81);
+            
+        
+
+        marker_52ff7d91b130c7d01e9850071b1bb645.bindPopup(popup_63486d47155bb6b629e781c0b0978d68)
+        ;
+
+        
+    
+    
+                marker_52ff7d91b130c7d01e9850071b1bb645.setIcon(icon_0419e43b6e1911256e1c1f6843056442);
+            
+    
+            var marker_258c635652b9735ce4743f267c5892cd = L.marker(
+                [-12.0579808, -77.0506077],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_6654214f8293bdccb99e5b3db3bfa7ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe02d11b2c0e8d8ba8aa2170523dbc3c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_33ae6e5accf9f01d7e3e6bd7b24f59b9 = $(`<div id="html_33ae6e5accf9f01d7e3e6bd7b24f59b9" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>PEÑA ADRIANZEN ANGEL AMADO</b><br>                 <b>Codigo:</b> C001677910<br>                 <b>Direccion:</b> JR. HUANCABAMBA NRO. 911 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0579808,-77.0506077'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0579808,-77.0506077&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_fe02d11b2c0e8d8ba8aa2170523dbc3c.setContent(html_33ae6e5accf9f01d7e3e6bd7b24f59b9);
+            
+        
+
+        marker_258c635652b9735ce4743f267c5892cd.bindPopup(popup_fe02d11b2c0e8d8ba8aa2170523dbc3c)
+        ;
+
+        
+    
+    
+                marker_258c635652b9735ce4743f267c5892cd.setIcon(icon_6654214f8293bdccb99e5b3db3bfa7ab);
+            
+    
+            var marker_0fd663c844db39dc87d54342c35fd95a = L.marker(
+                [-12.0595, -77.05409],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_6e7971faef306b0c79146972bdeb6b5d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a627b164351f663d9bfab5eef617b893 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e77f578e2b8708d83fdd79b209b1fbce = $(`<div id="html_e77f578e2b8708d83fdd79b209b1fbce" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>GAONA TAYPE ANGEL JESUS</b><br>                 <b>Codigo:</b> C001756937<br>                 <b>Direccion:</b> PJE. PASAJE MARIANO MERGAR 278 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0595,-77.05409'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0595,-77.05409&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_a627b164351f663d9bfab5eef617b893.setContent(html_e77f578e2b8708d83fdd79b209b1fbce);
+            
+        
+
+        marker_0fd663c844db39dc87d54342c35fd95a.bindPopup(popup_a627b164351f663d9bfab5eef617b893)
+        ;
+
+        
+    
+    
+                marker_0fd663c844db39dc87d54342c35fd95a.setIcon(icon_6e7971faef306b0c79146972bdeb6b5d);
+            
+    
+            var marker_e694ceaf8fa850c4b9a4fb7791e99f06 = L.marker(
+                [-12.0593739, -77.054177],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_ef0235710ac21b460dbab06d876cd6c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_891980ff4594bae47be47f4bfc2b5d08 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_66f827332c7dc187efb7e0b2efc62b89 = $(`<div id="html_66f827332c7dc187efb7e0b2efc62b89" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>GAONA TAYPE ANGEL JESUS</b><br>                 <b>Codigo:</b> C000532843<br>                 <b>Direccion:</b> MAL. PSJ MARIANO MELGAR N278 NRO. 278 MZA. MAZAA120 URB. BRE A Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0593739,-77.054177'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0593739,-77.054177&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_891980ff4594bae47be47f4bfc2b5d08.setContent(html_66f827332c7dc187efb7e0b2efc62b89);
+            
+        
+
+        marker_e694ceaf8fa850c4b9a4fb7791e99f06.bindPopup(popup_891980ff4594bae47be47f4bfc2b5d08)
+        ;
+
+        
+    
+    
+                marker_e694ceaf8fa850c4b9a4fb7791e99f06.setIcon(icon_ef0235710ac21b460dbab06d876cd6c0);
+            
+    
+            var marker_114b2866a1da6060a6a286259d588ffc = L.marker(
+                [-12.0590061, -77.055553],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_6746753aa17a466fe5f5a704e08c124c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d7eaad995dc3a36853ed438f11f40bb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9a2bb6d05c949d4bfe5a1de355163607 = $(`<div id="html_9a2bb6d05c949d4bfe5a1de355163607" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>IGNACIO SANTIAGO YOLANDA MARCELINA ‒ 10486731945</b><br>                 <b>Codigo:</b> C004220919<br>                 <b>Direccion:</b> Mcdo. Pilcomayo Pto. 187 Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0590061,-77.055553'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0590061,-77.055553&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_1d7eaad995dc3a36853ed438f11f40bb.setContent(html_9a2bb6d05c949d4bfe5a1de355163607);
+            
+        
+
+        marker_114b2866a1da6060a6a286259d588ffc.bindPopup(popup_1d7eaad995dc3a36853ed438f11f40bb)
+        ;
+
+        
+    
+    
+                marker_114b2866a1da6060a6a286259d588ffc.setIcon(icon_6746753aa17a466fe5f5a704e08c124c);
+            
+    
+            var marker_8f1c600c791a703219759d1473c2f8a2 = L.marker(
+                [-12.05926, -77.05563],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_21bf883ae804a9d33fea5c8e3f4092c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25af19bc2907ee815a3b6681e5289ed5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c9493777cf2cfd197af8660575ddeb40 = $(`<div id="html_c9493777cf2cfd197af8660575ddeb40" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>IGNACIO SANTIAGO YOLANDA MARCELINA</b><br>                 <b>Codigo:</b> C004022500<br>                 <b>Direccion:</b> MCDO. PILCOMAYO PTO. 187<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05926,-77.05563'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05926,-77.05563&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_25af19bc2907ee815a3b6681e5289ed5.setContent(html_c9493777cf2cfd197af8660575ddeb40);
+            
+        
+
+        marker_8f1c600c791a703219759d1473c2f8a2.bindPopup(popup_25af19bc2907ee815a3b6681e5289ed5)
+        ;
+
+        
+    
+    
+                marker_8f1c600c791a703219759d1473c2f8a2.setIcon(icon_21bf883ae804a9d33fea5c8e3f4092c1);
+            
+    
+            var marker_cc739f31847fe8e8e32104df628dde29 = L.marker(
+                [-12.0595579, -77.0566809],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_e876e31e0f1117492b137a17a7116b84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fa5296e4edfcbc2bdd01d68894f6c41 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c1879ec9ec0b210f581b9a8eeb981aa7 = $(`<div id="html_c1879ec9ec0b210f581b9a8eeb981aa7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>INVERSIONES &amp; NEGOCIACIONES DAMI S.A.C.</b><br>                 <b>Codigo:</b> C001344919<br>                 <b>Direccion:</b> JR. CENTENARIO NRO. 1198 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0595579,-77.0566809'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0595579,-77.0566809&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_1fa5296e4edfcbc2bdd01d68894f6c41.setContent(html_c1879ec9ec0b210f581b9a8eeb981aa7);
+            
+        
+
+        marker_cc739f31847fe8e8e32104df628dde29.bindPopup(popup_1fa5296e4edfcbc2bdd01d68894f6c41)
+        ;
+
+        
+    
+    
+                marker_cc739f31847fe8e8e32104df628dde29.setIcon(icon_e876e31e0f1117492b137a17a7116b84);
+            
+    
+            var marker_2bac47d44b25f2ded58d3679ab01677b = L.marker(
+                [-12.05917, -77.05738],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_619b32b4f3f9628806ce643f4c2bb479 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc838faeb806cda84199487ee038c5f7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cf418759dd4925b14528ecbb3055a20f = $(`<div id="html_cf418759dd4925b14528ecbb3055a20f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>CAQUIAMARCA HUAMANI SEBASTIAN WALFREDO</b><br>                 <b>Codigo:</b> C001535290<br>                 <b>Direccion:</b> JR. CENTENARIO NRO. 1300 Lima-Lima-Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.05917,-77.05738'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.05917,-77.05738&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_bc838faeb806cda84199487ee038c5f7.setContent(html_cf418759dd4925b14528ecbb3055a20f);
+            
+        
+
+        marker_2bac47d44b25f2ded58d3679ab01677b.bindPopup(popup_bc838faeb806cda84199487ee038c5f7)
+        ;
+
+        
+    
+    
+                marker_2bac47d44b25f2ded58d3679ab01677b.setIcon(icon_619b32b4f3f9628806ce643f4c2bb479);
+            
+    
+            var marker_8ca144ba4221bab40be7c39510535fcf = L.marker(
+                [-12.057966, -77.0567942],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_7346dad717f9e7b433a2017724e096be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_959eb367fdb99323b340e4ae0907a615 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_03f9eb02b3d6e500a94270a798bb0f5e = $(`<div id="html_03f9eb02b3d6e500a94270a798bb0f5e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>FERNANDEZ DIAZ ELIZABETH ‒ 10102201251</b><br>                 <b>Codigo:</b> C004224087<br>                 <b>Direccion:</b> Jr chamalla 1115 Distrito Breña<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.057966,-77.0567942'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.057966,-77.0567942&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_959eb367fdb99323b340e4ae0907a615.setContent(html_03f9eb02b3d6e500a94270a798bb0f5e);
+            
+        
+
+        marker_8ca144ba4221bab40be7c39510535fcf.bindPopup(popup_959eb367fdb99323b340e4ae0907a615)
+        ;
+
+        
+    
+    
+                marker_8ca144ba4221bab40be7c39510535fcf.setIcon(icon_7346dad717f9e7b433a2017724e096be);
+            
+    
+            var marker_ecbacf06227ed2b56775f5bf4af9f717 = L.marker(
+                [-12.0575191, -77.0570554],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_e1692de7b0a51a063a111d0da9414818 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f98aab555dd5f2f7f97a03d0d4424f1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c5662a0993bd6a2f7f664886b4ad6afc = $(`<div id="html_c5662a0993bd6a2f7f664886b4ad6afc" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>QUISPE ESPILLCO CLEOFE MODESTA</b><br>                 <b>Codigo:</b> C004203492<br>                 <b>Direccion:</b> Jr restauración 1414<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0575191,-77.0570554'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0575191,-77.0570554&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_8f98aab555dd5f2f7f97a03d0d4424f1.setContent(html_c5662a0993bd6a2f7f664886b4ad6afc);
+            
+        
+
+        marker_ecbacf06227ed2b56775f5bf4af9f717.bindPopup(popup_8f98aab555dd5f2f7f97a03d0d4424f1)
+        ;
+
+        
+    
+    
+                marker_ecbacf06227ed2b56775f5bf4af9f717.setIcon(icon_e1692de7b0a51a063a111d0da9414818);
+            
+    
+            var marker_00f2873c563e97caf589473b5eabe54e = L.marker(
+                [-12.0570703, -77.0564965],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_36b36920624a2c6b13c03a29ac369a37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e831a25ba10a732946889f501e2ae37a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_387add028773ef68300f9b4c577efa9a = $(`<div id="html_387add028773ef68300f9b4c577efa9a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>RODRIGUEZ SEGURA FERNANDO VICENTE ‒ 21245450</b><br>                 <b>Codigo:</b> C004241426<br>                 <b>Direccion:</b> Jr Tarapoto 1033<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0570703,-77.0564965'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0570703,-77.0564965&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_e831a25ba10a732946889f501e2ae37a.setContent(html_387add028773ef68300f9b4c577efa9a);
+            
+        
+
+        marker_00f2873c563e97caf589473b5eabe54e.bindPopup(popup_e831a25ba10a732946889f501e2ae37a)
+        ;
+
+        
+    
+    
+                marker_00f2873c563e97caf589473b5eabe54e.setIcon(icon_36b36920624a2c6b13c03a29ac369a37);
+            
+    
+            var marker_ab6ca749f4f2108b184c2308b35cef54 = L.marker(
+                [-12.0605776, -77.0575975],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_5fb6d5908921f80e5b9e9ce24f8d5440 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ea59e8245e9ea57bad15777ab1ca60b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_447adffb4dd63b8a156420e77249f5b0 = $(`<div id="html_447adffb4dd63b8a156420e77249f5b0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>TAIPE ORDOÑEZ JOSE MIGUEL</b><br>                 <b>Codigo:</b> C004100630<br>                 <b>Direccion:</b> Jr orbegoso 1199<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0605776,-77.0575975'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0605776,-77.0575975&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_9ea59e8245e9ea57bad15777ab1ca60b.setContent(html_447adffb4dd63b8a156420e77249f5b0);
+            
+        
+
+        marker_ab6ca749f4f2108b184c2308b35cef54.bindPopup(popup_9ea59e8245e9ea57bad15777ab1ca60b)
+        ;
+
+        
+    
+    
+                marker_ab6ca749f4f2108b184c2308b35cef54.setIcon(icon_5fb6d5908921f80e5b9e9ce24f8d5440);
+            
+    
+            var marker_caef10c833be7e0ead9af20db6295118 = L.marker(
+                [-12.0616533, -77.058546],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_89158a63f3fdabda56637400ba48cea9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f9bf67117b3893d2d7be0d70a5f34a0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cc9b051bd58fca4ee1d290947d1791a5 = $(`<div id="html_cc9b051bd58fca4ee1d290947d1791a5" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>ROJAS RAMOS ROBERT JULIAN</b><br>                 <b>Codigo:</b> C004160863<br>                 <b>Direccion:</b> Jr castrovirreyna 1207<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0616533,-77.058546'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0616533,-77.058546&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_2f9bf67117b3893d2d7be0d70a5f34a0.setContent(html_cc9b051bd58fca4ee1d290947d1791a5);
+            
+        
+
+        marker_caef10c833be7e0ead9af20db6295118.bindPopup(popup_2f9bf67117b3893d2d7be0d70a5f34a0)
+        ;
+
+        
+    
+    
+                marker_caef10c833be7e0ead9af20db6295118.setIcon(icon_89158a63f3fdabda56637400ba48cea9);
+            
+    
+            var marker_dd777cbcedc2ed426d9e7c9fe0e80e74 = L.marker(
+                [-12.0624566, -77.0557009],
+                {
+}
+            ).addTo(map_8927b6fda8030ead0fad51161a555d2a);
+        
+    
+            var icon_19e49023de66255dae8e045ee6c16c4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e04189b183864f8963467132894216b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_537e1a95346b74fca92277653725755c = $(`<div id="html_537e1a95346b74fca92277653725755c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:13px;line-height:1.45;min-width:230px'>                 <b style='font-size:15px'>YOVERA CARBONELL JANINA CLARIZA ‒ 40161055</b><br>                 <b>Codigo:</b> C004241147<br>                 <b>Direccion:</b> Jr Azcona 1543<br>                 <a target='_blank' href='https://www.google.com/maps/search/?api=1&query=-12.0624566,-77.0557009'>Google Maps</a> ·                 <a target='_blank' href='https://waze.com/ul?ll=-12.0624566,-77.0557009&navigate=yes'>Waze</a></div></div>`)[0];
+                popup_7e04189b183864f8963467132894216b.setContent(html_537e1a95346b74fca92277653725755c);
+            
+        
+
+        marker_dd777cbcedc2ed426d9e7c9fe0e80e74.bindPopup(popup_7e04189b183864f8963467132894216b)
+        ;
+
+        
+    
+    
+                marker_dd777cbcedc2ed426d9e7c9fe0e80e74.setIcon(icon_19e49023de66255dae8e045ee6c16c4d);
+            
+</script>
+</html>
